@@ -1,94 +1,35 @@
 encoding: UTF-8
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+title: LAH 기술 블로그
+description: IT Everywhere
+permalink: ':title/'
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://lahion.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+site-twitter: #if your site has a twitter account, enter it here
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-#theme: jekyll-theme-so-simple
-remote_theme: mmistakes/so-simple-theme
-skin: "/assets/css/skins/default.css"
-locale: ko-KR
-title: "기술 블로그"
-description: "IT Everywhere"
-baseurl: ""
-url: "https://lahion.github.io"
-logo: "/assets/images/LAH.png"
-date_format: "%Y-%m-%d"
-read_time: true
-words_per_minute: 200
-google_fonts:
-  - name: "Source Sans Pro"
-    weights: "400,400i,700,700i"
-  - name: "Lora"
-    weights: "400,400i,700,700i"
+# Author Settings
+author: LAH # add your name
+author-img: LAH.png # add your photo
+about-author: LAH. # add description
+social-twitter: # add your Twitter handle
+social-facebook: # add your Facebook handle
+social-github: artemsheludko # add your Github handle
+social-linkedin: # add your Linkedin handle
+social-email: # add your Email address
 
-# Liquid
-liquid:
-  error_mode: strict
+# Disqus
+discus-identifier: # add your discus identifier
 
-# Build settings
-permalink: /:categories/:title/
+# Tracker
+analytics: # Google Analytics
+
+# Build Settings
 markdown: kramdown
-feed:
-  path: atom.xml
-
-# Pagination - https://jekyllrb.com/docs/pagination/
-# paginate: 10
-# paginate_path: /page:num/
-
-# Search
-search_full_content: false # can have performance implications for large sites
-
-# Taxonomy pages
-# category_archive_path: "/categories/#"
-# tag_archive_path: "/tags/#"
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
   - jekyll-paginate
+  - jemoji
 
-# Front Matter Defaults
-defaults:
-  # Posts defaults
-  - scope:
-      path: "_posts"
-      type: posts
-    values:
-      layout: post
-      share: true
+paginate: 8
+paginate_path: "/page/:num"
 
-# Site Author
-author:
-  name:
-  picture:
-  email:
-
-# Footer Links
-footer_links:
-  - title: Feed
-    url: atom.xml
-    icon: fas fa-rss-square
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
