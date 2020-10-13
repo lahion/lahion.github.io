@@ -17,11 +17,11 @@ theme: jekyll-theme-so-simple
 # remote_theme: mmistakes/so-simple-theme
 skin: "/assets/css/skins/default.css"
 locale: ko-KR
-title: "LAH 기술 블로그"
-description: "LAH 기술 블로그"
-baseurl: "/"
+title: "기술 블로그"
+description: "IT Everywhere"
+baseurl: ""
 url: "https://lahion.github.io"
-logo: "/images/logo.png"
+logo: "/assets/images/LAH.png"
 date_format: "%Y-%m-%d"
 read_time: true
 words_per_minute: 200
