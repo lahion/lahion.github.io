@@ -8,13 +8,11 @@ site-twitter: #if your site has a twitter account, enter it here
 
 # Author Settings
 author: LAH # add your name
-author-img: LAH.png # add your photo
+author-img: LAH_logo.png # add your photo
 about-author: LAH. # add description
-social-twitter: # add your Twitter handle
-social-facebook: # add your Facebook handle
-social-github: artemsheludko # add your Github handle
-social-linkedin: # add your Linkedin handle
-social-email: # add your Email address
+social-twitter: lah_company
+social-facebook: lahcompany
+social-instagram: lah_company
 
 # Disqus
 discus-identifier: # add your discus identifier
