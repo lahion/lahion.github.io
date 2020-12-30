@@ -1120,7 +1120,6 @@ footer .copyright {
   min-height: 11rem;
   -webkit-border-radius: 10px;
           border-radius: 10px;
-  overflow: hidden;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
