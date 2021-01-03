@@ -2,6 +2,7 @@
 .jekyll-metadata
 _site
 _drafts
+**/.DS_Store
 .sass-cache
 yarn.lock
 Gemfile.lock
