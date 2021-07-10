@@ -26,7 +26,7 @@ LAH 개발팀은 Nuxt로 프론트엔드를 개발합니다.\\
 따라서 서버사이드에서 레이아웃이 구성된 채로 띄워줄수는 없는 거죠.\\
 \\
 그래서 다른 서비스처럼.. skeleton을 추가했습니다.\\
-\\
+
 ```html
 <template v-if="is_loading">
   <actor-portfolio-card skeleton />
@@ -65,7 +65,7 @@ Swiper가 destroy 함수를 실행합니다.\\
 cleanup과정으로 destroy를 실행한다고 합니다.\\
 \\
 그 이후.. 더 조사해보니 이미 공식 문서에 옵션이 있었습니다.\\
-\\
+
 ```javascript
 swiper.destroy(deleteInstance, cleanStyles)
 /*
@@ -83,7 +83,7 @@ Issues에서 destroy를 검색하니 관련 이슈가 검색됩니다.\\
 [Swiper collapses on route change](https://github.com/surmon-china/vue-awesome-swiper/issues/317){:target="_blank"} 이름으로 이슈가 등록되어있는데\\
 해당 이슈를 해결하기 위해 옵션이 추가되어있었습니다.\\
 즉 vue-awesome-swiper 공식 문서를 봤다면 알 수 있었겠죠.\\
-\\
+
 ```javascript
 <swiper
   :options="swiperOptionsObject"
@@ -102,7 +102,7 @@ v4.x에서 예시와 같이 cleanup-styles-on-destroy와 delete-instance-on-dest
 LAH에서는 직접 컴포넌트 태그를 사용하지 않고\\
 v-swiper directives 를 사용해서 구현했기 때문인지.. 안되네요.\\
 결국 차선책으로 destroy 함수를 오버라이딩하여 cleanup하지 않도록 했습니다.\\
-\\
+
 ```javascript
 mounted() {
   this.actorPortfolio.destroy = () => {}
