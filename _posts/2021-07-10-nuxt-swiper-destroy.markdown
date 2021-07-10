@@ -81,7 +81,7 @@ cleanStyles - boolean - Set it to true (by default it is true) and all custom st
 <del>역시 래핑된 컴포넌트를 사용하면 확실히 장단점이 있네요</del>
 
 Issues에서 destroy를 검색하니 관련 이슈가 검색됩니다.
-[Swiper collapses on route change](https://github.com/surmon-china/vue-awesome-swiper/issues/317){_target="_blank"} 이름으로 이슈가 등록되어있는데
+[Swiper collapses on route change](https://github.com/surmon-china/vue-awesome-swiper/issues/317){:target="_blank"} 이름으로 이슈가 등록되어있는데
 해당 이슈를 해결하기 위해 옵션이 추가되어있었습니다.
 즉 vue-awesome-swiper 공식 문서를 봤다면 알 수 있었겠죠.
 
