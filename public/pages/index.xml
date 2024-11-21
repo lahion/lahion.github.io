@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on LAH 기술블로그</title>
+    <link>http://localhost:1313/pages/</link>
+    <description>Recent content in Pages on LAH 기술블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language><atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/pages/about/</guid>
+      
+      <description>&lt;p&gt;LAHion의 기술블로그입니다.&lt;br&gt;
+소프트웨어 기술에 대한 경험을 공유하고자 만들었습니다.&lt;br&gt;
+구성원들이 부담없이 기술을 공유할 수 있도록 하는 것이 목표입니다.&lt;br&gt;
+&lt;br&gt;
+주로 다루게 될 내용은 (아마) 이렇습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python / Django&lt;/li&gt;
+&lt;li&gt;React / Next.js&lt;/li&gt;
+&lt;li&gt;GCP (Google Cloud Platform)&lt;/li&gt;
+&lt;li&gt;Docker / Kubernetes&lt;/li&gt;
+&lt;li&gt;Redis / Kafka / RabbitMQ&lt;/li&gt;
+&lt;li&gt;Dart / Flutter&lt;/li&gt;
+&lt;li&gt;Swift / Kotlin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;다음 원칙을 지켜보겠습니다. &lt;img alt=&#34;LOL&#34; src=&#34;http://localhost:1313/emoji/Lahion_emoji_4.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;성공한 것만 쓰지 않기&lt;/li&gt;
+&lt;li&gt;부연 설명 많이 하기&lt;/li&gt;
+&lt;li&gt;장황하다고 느껴도, 명료하게 다듬으려고 하지 않기&lt;/li&gt;
+&lt;li&gt;사소한 것도 글로 남기는 연습하기&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
