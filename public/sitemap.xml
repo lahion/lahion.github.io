@@ -3,7 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://lahion.github.io/</loc>
-    <lastmod>2023-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lahion.github.io/posts/</loc>
+    <lastmod>2024-11-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lahion.github.io/posts/welcome-dev/</loc>
+    <lastmod>2024-11-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lahion.github.io/posts_refs/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
@@ -37,7 +43,5 @@
     <loc>https://lahion.github.io/categories/</loc>
   </url><url>
     <loc>https://lahion.github.io/pages/</loc>
-  </url><url>
-    <loc>https://lahion.github.io/posts/</loc>
   </url>
 </urlset>
