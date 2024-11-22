@@ -41,8 +41,8 @@
         "@type": "Article",
         "headline": {{ .Title }},
         "author": {
-        "@type": "Person",
-        "name": "{{ .Site.Params.github }}"
+            "@type": "Person",
+            "name": "{{ .Params.author }}"
         },
         "datePublished": "{{ dateFormat "2006-01-02" .Date }}",
         "description": {{ .Description }},
