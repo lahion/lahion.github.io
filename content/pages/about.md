@@ -1,7 +1,5 @@
 ---
 title: About
-description: "About"
-author: Taether
 ---
 
 LAHion의 기술블로그입니다.<br>

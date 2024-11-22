@@ -5,12 +5,15 @@
             <header class="header">
                 <h1 class="header-title">{{ .Title }}</h1>
                 {{ $configDateFormat := .Site.Params.dateFormat | default ":date_medium" }}
-                {{ with .Date }}
                 <div class="post-meta">
+                    {{ with .Date }}
                     {{ $ISO_time := dateFormat "2006-01-02T15:04:05-07:00" . }}
-                    <time datetime="{{ $ISO_time }}" itemprop="datePublished"> {{ . | time.Format $configDateFormat }} </time>
+                    <time datetime="{{ $ISO_time }}" itemprop="datePublished"> {{ . | time.Format $configDateFormat }}
+                    </time>
                     {{ end }}
+                    {{ if .Params.author }}
                     <author>{{ .Params.author }}</author>
+                    {{ end }}
                 </div>
             </header>
             {{ partial "toc.html" .}}
