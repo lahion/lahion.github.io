@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on LAH 기술블로그</title>
+    <title>Home on LAH (기술)블로그</title>
     <link>https://lahion.github.io/</link>
-    <description>Recent content in Home on LAH 기술블로그</description>
+    <description>Recent content in Home on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>기술 블로그 오픈</title>
+      <title>(기술) 블로그 오픈</title>
       <link>https://lahion.github.io/posts/welcome-dev/</link>
       <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>https://lahion.github.io/posts/welcome-dev/</guid>
       
-      <description>&lt;p&gt;기술 블로그를 오픈했습니다.&lt;br&gt;
+      <description>&lt;p&gt;블로그를 오픈했습니다.&lt;br&gt;
 첫 포스트는 아직 준비중이에요. 조금만 기다려주세요!&lt;/p&gt;</description>
       
     </item>
@@ -106,9 +106,9 @@
       
       <guid>https://lahion.github.io/pages/about/</guid>
       
-      <description>&lt;p&gt;LAHion의 기술블로그입니다.&lt;br&gt;
-소프트웨어 기술에 대한 경험을 공유하고자 만들었습니다.&lt;br&gt;
-구성원들이 부담없이 기술을 공유할 수 있도록 하는 것이 목표입니다.&lt;br&gt;
+      <description>&lt;p&gt;LAHion의 (기술)블로그입니다.&lt;br&gt;
+소프트웨어 기술 뿐만 아니라 다양한 경험을 공유하고자 만들었습니다.&lt;br&gt;
+구성원들이 부담없이 공유할 수 있도록 하는 것이 목표입니다.&lt;br&gt;
 &lt;br&gt;
 주로 다루게 될 내용은 (아마) 이렇습니다.&lt;/p&gt;
 &lt;ul&gt;
@@ -119,6 +119,9 @@
 &lt;li&gt;Redis / Kafka / RabbitMQ&lt;/li&gt;
 &lt;li&gt;Dart / Flutter&lt;/li&gt;
 &lt;li&gt;Swift / Kotlin&lt;/li&gt;
+&lt;li&gt;다양한 회고&lt;/li&gt;
+&lt;li&gt;이벤트 후기&lt;/li&gt;
+&lt;li&gt;서비스 소개&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;다음 원칙을 지켜보겠습니다. &lt;img alt=&#34;LOL&#34; src=&#34;https://lahion.github.io/emoji/Lahion_emoji_4.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;

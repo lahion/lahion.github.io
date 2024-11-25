@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on LAH 기술블로그</title>
+    <title>Posts on LAH (기술)블로그</title>
     <link>https://lahion.github.io/posts/</link>
-    <description>Recent content in Posts on LAH 기술블로그</description>
+    <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>기술 블로그 오픈</title>
+      <title>(기술) 블로그 오픈</title>
       <link>https://lahion.github.io/posts/welcome-dev/</link>
       <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>https://lahion.github.io/posts/welcome-dev/</guid>
       
-      <description>&lt;p&gt;기술 블로그를 오픈했습니다.&lt;br&gt;
+      <description>&lt;p&gt;블로그를 오픈했습니다.&lt;br&gt;
 첫 포스트는 아직 준비중이에요. 조금만 기다려주세요!&lt;/p&gt;</description>
       
     </item>

@@ -1,6 +1,6 @@
 baseURL = 'https://lahion.github.io/'
 languageCode = 'ko-kr'
-title = 'LAH 기술블로그'
+title = 'LAH (기술)블로그'
 
 defaultContentLanguage = 'ko-kr'
 enableEmoji = true
@@ -47,7 +47,7 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
     weight = 30
 
 [Languages.ko-kr.params]
-  sitename = "LAH 기술블로그"
+  sitename = "LAH (기술)블로그"
   defaultColor = "dark"
   mainSections = ['posts']
   toc = false # set to false to disable table of contents 'globally'
@@ -62,13 +62,13 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
 
 [Languages.ko-kr.params.author]
   avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
-  intro = "LAH 기술블로그"
+  intro = "LAH (기술)블로그"
   name = "LAH"
   description = "(아마도)"
 
 # Allow to override webmanifest options
 [Languages.ko-kr.params.webmanifest]
-  name = "LAH 기술블로그" # will use "params.sitename" or "title" by default
+  name = "LAH (기술)블로그" # will use "params.sitename" or "title" by default
   short_name = "LAH" # same as name
   start_url = "/" # will use homepage url by default
   theme_color = "#434648" # default is "#434648" (base color of text). Also will override html `<meta name="theme-color" />`
