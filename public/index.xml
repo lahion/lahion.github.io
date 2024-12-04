@@ -6,7 +6,33 @@
     <description>Recent content in Home on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(Django) filter 올바르게 사용하기 1편</title>
+      <link>https://lahion.github.io/posts/kuro-dev/</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/kuro-dev/</guid>
+      
+      <description>&lt;p&gt;지도 이후 그렇게 큰 이슈또는 알아낸 것, 깨달은 것이 없어서 첫글을 지금 쓰네요.&lt;br&gt;
+최근에 에듀로 다시 넘어오면서 발생했던 문제, 그것을 해결한 부분이 있어 글로 남깁니다.&lt;br&gt;
+해당 편은 총 2편으로 제작될 예정이며, 지금의 조치가 올바르지 않을 수 있으나 효과가 있었기에 글로 남기게 되었습니다.&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;문제사항&#34;&gt;문제사항&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;DB에 저장된 데이터들을 가공하여 통계를 내는 과정에서 외래키로 연결된 필드를 활용할 때마다 &amp;lsquo;similar queries&amp;rsquo;로 부하가 발생한다.&lt;/li&gt;
+&lt;li&gt;반복문 내 filter 사용으로 반복문의 범위가 커질 때마다 동일 쿼리가 해당 개수만큼 발생한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;본론&#34;&gt;본론&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;사용근거와-원인분석&#34;&gt;사용근거와 원인분석&lt;/h3&gt;
+&lt;p&gt;이 글에서는 1번의 원인/해결법을 다뤄볼 예정이다.
+&lt;br&gt;&lt;br&gt;
+당연하게도 처음에는 Model.object.filter(&amp;hellip;) 또는 all()을 사용할 때 그 즉시 쿼리문이 실행될 것이라 생각 해왔었다. 예시 모델 코드를 준비해 보았다.&lt;br&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>(기술) 블로그 오픈</title>
       <link>https://lahion.github.io/posts/welcome-dev/</link>
