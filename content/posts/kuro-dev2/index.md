@@ -124,7 +124,7 @@ BookRent.object.filter(...).values("bookname")
 count를 만들기 위해서 **annotate**를 사용해 count 필드를 추가하였다.
 
 ```python
-BookRent.object.filter(...).values("bookname").annotate(rent_count=Count(''))
+BookRent.object.filter(...).values("bookname").annotate(rent_count=Count('*'))
 ```
 
 ```
@@ -144,7 +144,7 @@ view
 ```python
 ...
 book=Book.objects.all()
-rent_counts=BookRent.object.filter(...).values("bookname").annotate(rent_count=Count(''))
+rent_counts=BookRent.object.filter(...).values("bookname").annotate(rent_count=Count('*'))
 
 #딕셔너리로 전환
 rent_counts_dict = {q['bookname']:q['rent_count'] for q in rent_counts}
