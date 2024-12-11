@@ -211,23 +211,23 @@ stroke-linejoin="round" class="feather feather-home">
 <p>이 글에서는 1번의 원인/해결법을 다뤄볼 예정이다.
 <br><br>
 당연하게도 처음에는 Model.object.filter(&hellip;) 또는 all()을 사용할 때 그 즉시 쿼리문이 실행될 것이라 생각 해왔었다. 예시 모델 코드를 준비해 보았다.<br></p>
-<pre tabindex="0"><code>class Student(models.Model):
-    name=models.CharField(max_length=256, verbose_name=&#34;학생명&#34;)
-    grade_group=models.ForeignKey(&#34;group.GradeGroup&#34;, verbose_name=&#34;학급,반&#34;)
-    instructor=models.ManyToManyField(&#34;teacher.Teacher&#34;, verbose_name=&#34;수업강사&#34;)
-    ...
-</code></pre><p>학생 클래스에서 &lsquo;학급,반&rsquo;, &lsquo;수업강사&rsquo;가 각각 타 테이블과 연결이 되어 있다.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&#34;학생명&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grade_group</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s2">&#34;group.GradeGroup&#34;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&#34;학급,반&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instructor</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="s2">&#34;teacher.Teacher&#34;</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&#34;수업강사&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span></code></pre></div><p>학생 클래스에서 &lsquo;학급,반&rsquo;, &lsquo;수업강사&rsquo;가 각각 타 테이블과 연결이 되어 있다.<br>
 아래 view에서는 이렇게 구현을 해보았다.</p>
-<pre tabindex="0"><code>students=Student.objects.all()
-
-for student in students:
-    item = {
-        &#39;name&#39;:student.name,
-        &#39;grade_group&#39;:student.grade_group.grade, #학년별 반
-        &#39;instructor&#39;:student.instuctor.name, #강사 내역
-        ...
-    }
-</code></pre><p>위처럼 작성할 경우 for문의 범위만큼 grade_group에서는 query가 발생하게 된다.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">students</span><span class="o">=</span><span class="n">Student</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">item</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="n">student</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;grade_group&#39;</span><span class="p">:</span><span class="n">student</span><span class="o">.</span><span class="n">grade_group</span><span class="o">.</span><span class="n">grade</span><span class="p">,</span> <span class="c1">#학년별 반</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;instructor&#39;</span><span class="p">:</span><span class="n">student</span><span class="o">.</span><span class="n">instuctor</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="c1">#강사 내역</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>위처럼 작성할 경우 for문의 범위만큼 grade_group에서는 query가 발생하게 된다.<br>
 학생이 100명이면 저 한줄 때문에 100개의 query가 발생된다는 것이다.<br>
 어떻게 생각하면 당연하게도 저 로직이 실행이 된다면 student에 저장된 foreign key(id)를 들고 오게 되는데 우린 해당 테이블의 grade값을 알고 싶기 때문에 grade_group 테이블을 조회하는 query가 발생할 수 밖에 없는 것이다.<br>
 또한 instructor은 manytomany 형태이기 때문에 위처럼 view가 작성될 경우 단일값이 아니기에 에러가 발생하게 된다.<br></p>
@@ -236,8 +236,8 @@ for student in students:
 이를위해 django에서는 2가지 기능을 제공한다.(select_related, prefetch_related)<br>
 파악한 바로는 두 기능 모두 미리 필요한 데이터를 가져오는데 사용되는 메서드이다. 위처럼 foreign_key로 연결된 경우 해당 테이블의 데이터를 미리 가져올 때 쓰기에 적절한 메서드라 생각했다.<br></p>
 <p>prefetch_related 메서드를 활용해 해결된 것을 확인하였는데 select_related와 무슨 차이가 무엇인지는 아직 이해하지 못했다.<br></p>
-<pre tabindex="0"><code>students=Student.objects.all().prefetch_related(&#39;grade_group&#39;,&#39;instructor&#39;)
-</code></pre><p>view 코드에서 위처럼 수정을 해주었다.<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">students</span><span class="o">=</span><span class="n">Student</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">prefetch_related</span><span class="p">(</span><span class="s1">&#39;grade_group&#39;</span><span class="p">,</span><span class="s1">&#39;instructor&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>view 코드에서 위처럼 수정을 해주었다.<br>
 반복문이 동작하기 전에 foreign key의 테이블에 접근해 해당 테이블의 데이터를 가져올 수 있도록 하였다.<br>
 실제 쿼리문은 아래처럼 작성된 것을 확인할 수 있었다.</p>
 <pre tabindex="0"><code>SELECT *

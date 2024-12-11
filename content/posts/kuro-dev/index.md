@@ -27,7 +27,7 @@ description: 쿠로 첫글 남깁니다.
 <br><br>
 당연하게도 처음에는 Model.object.filter(...) 또는 all()을 사용할 때 그 즉시 쿼리문이 실행될 것이라 생각 해왔었다. 예시 모델 코드를 준비해 보았다.<br>
 
-```
+```python
 class Student(models.Model):
     name=models.CharField(max_length=256, verbose_name="학생명")
     grade_group=models.ForeignKey("group.GradeGroup", verbose_name="학급,반")
@@ -38,7 +38,7 @@ class Student(models.Model):
 학생 클래스에서 '학급,반', '수업강사'가 각각 타 테이블과 연결이 되어 있다.<br>
 아래 view에서는 이렇게 구현을 해보았다.
 
-```
+```python
 students=Student.objects.all()
 
 for student in students:
@@ -63,7 +63,7 @@ for문 내에서 query가 발생되지 않도록 미리 조치를 할 필요가 
 
 prefetch_related 메서드를 활용해 해결된 것을 확인하였는데 select_related와 무슨 차이가 무엇인지는 아직 이해하지 못했다.<br>
 
-```
+```python
 students=Student.objects.all().prefetch_related('grade_group','instructor')
 ```
 
