@@ -3,53 +3,95 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Emoji Support | LAH (기술)블로그</title>
-<meta property="og:title" content="Emoji Support | LAH (기술)블로그" />
-<meta name="twitter:title" content="Emoji Support | LAH (기술)블로그" />
-<meta itemprop="name" content="Emoji Support | LAH (기술)블로그" />
-<meta name="application-name" content="Emoji Support | LAH (기술)블로그" />
+<title itemprop="name">CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL) | LAH (기술)블로그</title>
+<meta property="og:title" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL) | LAH (기술)블로그" />
+<meta name="twitter:title" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL) | LAH (기술)블로그" />
+<meta itemprop="name" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL) | LAH (기술)블로그" />
+<meta name="application-name" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL) | LAH (기술)블로그" />
 <meta property="og:site_name" content="LAH (기술)블로그" />
 
-<meta name="description" content="Guide to emoji usage in Hugo">
-<meta itemprop="description" content="Guide to emoji usage in Hugo" />
-<meta property="og:description" content="Guide to emoji usage in Hugo" />
-<meta name="twitter:description" content="Guide to emoji usage in Hugo" />
+<meta name="description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
+<meta itemprop="description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
+<meta property="og:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
+<meta name="twitter:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
 
 <meta property="og:locale" content="ko-kr" />
 <meta name="language" content="ko-kr" />
 
-  <link rel="alternate" hreflang="ko-kr" href="https://lahion.github.io/posts_refs/emoji-support/" title="한국어" />
+  <link rel="alternate" hreflang="ko-kr" href="https://lahion.github.io/posts/alghost/postgres-centos-issue/" title="한국어" />
 
 
 
 
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-12-19T00:00:00Z />
+    <meta property="article:published_time" content=2024-12-19T00:00:00Z />
+    <meta property="og:url" content="https://lahion.github.io/posts/alghost/postgres-centos-issue/" />
+
+    
+    <meta property="og:article:author" content="LAH" />
+    <meta property="article:author" content="LAH" />
+    <meta name="author" content="LAH" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)",
+        "author": {
+            "@type": "Person",
+            "name": "태더"
+        },
+        "datePublished": "2024-12-19",
+        "description": "CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.",
+        "wordCount":  52 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-12-19",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "LAH (기술)블로그"
+        }
+    }
+    </script>
 
 
 <meta name="generator" content="Hugo 0.140.0">
 
     
-    <meta property="og:url" content="https://lahion.github.io/posts_refs/emoji-support/">
+    <meta property="og:url" content="https://lahion.github.io/posts/alghost/postgres-centos-issue/">
   <meta property="og:site_name" content="LAH (기술)블로그">
-  <meta property="og:title" content="Emoji Support">
-  <meta property="og:description" content="Guide to emoji usage in Hugo">
+  <meta property="og:title" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)">
+  <meta property="og:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
   <meta property="og:locale" content="ko_kr">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="posts_refs">
-    <meta property="article:published_time" content="2023-02-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-02-01T00:00:00+00:00">
-    <meta property="article:tag" content="Emoji">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-19T00:00:00+00:00">
 
 
     
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Emoji Support">
-  <meta name="twitter:description" content="Guide to emoji usage in Hugo">
+  <meta name="twitter:title" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)">
+  <meta name="twitter:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
 
 
     
 
-    <link rel="canonical" href="https://lahion.github.io/posts_refs/emoji-support/">
+    <link rel="canonical" href="https://lahion.github.io/posts/alghost/postgres-centos-issue/">
     <link href="/style.min.15e210b7168017a77ea59077260c480991718f2c9cee9bf36d5a909cc1f826cb.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -106,7 +148,7 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/posts/">
+                    <a class="menu-link active" href="/posts/">
                         Posts
                     </a>
                     
@@ -139,32 +181,52 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">Emoji Support</h1>
+                <h1 class="header-title">CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)</h1>
                 
                 <div class="post-meta">
                     
                     
-                    <time datetime="2023-02-01T00:00:00&#43;00:00" itemprop="datePublished"> 2023-02-01
+                    <time datetime="2024-12-19T00:00:00&#43;00:00" itemprop="datePublished"> 2024-12-19
                     </time>
                     
                     
-                    <author>Hugo Authors</author>
+                    <author>태더</author>
                     
                 </div>
             </header>
             
             <div class="page-content">
-                <p>Emoji can be enabled in a Hugo project in a number of ways.</p>
-<p>The <a href="https://gohugo.io/functions/emojify/"><code>emojify</code></a> function can be called directly in templates or <a href="https://gohugo.io/templates/shortcode-templates/#inline-shortcodes">Inline Shortcodes</a>.</p>
-<p>To enable emoji globally, set <code>enableEmoji</code> to <code>true</code> in your site&rsquo;s <code>hugo.toml</code>. You can type emoji shorthand codes directly in content files; e.g.</p>
-<p><code>:see_no_evil:</code> &#x1f648; <code>:hear_no_evil:</code> &#x1f649; <code>:speak_no_evil:</code> &#x1f64a;</p>
-<p>I &#x2764;&#xfe0f; Hugo! 😁</p>
-<p>The <a href="http://www.emoji-cheat-sheet.com/">Emoji cheat sheet</a> is a useful reference for emoji shorthand codes.</p>
+                <h2 id="개요">개요</h2>
+<p>최근 Python 3.6 기반의 레거시 서비스를 Python 3.9로 업데이트하였습니다. 주요 라이브러리들을 전부 업데이트하였고, 그 중 PostgreSQL 연결시 사용하는 psycopg2-binary 패키지가 업데이트 되면서, 서버 내 PostgreSQL Client 구성이 필요하게 되었습니다.
+이 포스팅은 PostgreSQL Client의 구성과 psycopg2-binary 패키지 업데이트 이슈를 해결하는 과정을 정리합니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>기존</th>
+          <th>Age</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Bob</td>
+          <td>27</td>
+      </tr>
+      <tr>
+          <td>Alice</td>
+          <td>23</td>
+      </tr>
+  </tbody>
+</table>
 <hr>
-<p><strong>N.B.</strong> The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">emoji</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">font-family</span><span class="p">:</span> <span class="n">Apple</span> <span class="n">Color</span> <span class="n">Emoji</span><span class="p">,</span> <span class="n">Segoe</span> <span class="n">UI</span> <span class="n">Emoji</span><span class="p">,</span> <span class="n">NotoColorEmoji</span><span class="p">,</span> <span class="n">Segoe</span> <span class="n">UI</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Android</span> <span class="n">Emoji</span><span class="p">,</span> <span class="n">EmojiSymbols</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<h2 id="문제">문제</h2>
+<hr>
+<h2 id="원인">원인</h2>
+<hr>
+<h2 id="해결">해결</h2>
+<hr>
+<h2 id="참고">참고</h2>
+<hr>
+
             </div>
         </article></main>
 </div>

@@ -6,7 +6,47 @@
     <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 11 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)</title>
+      <link>https://lahion.github.io/posts/alghost/postgres-centos-issue/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/alghost/postgres-centos-issue/</guid>
+      
+      <description>&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;p&gt;최근 Python 3.6 기반의 레거시 서비스를 Python 3.9로 업데이트하였습니다. 주요 라이브러리들을 전부 업데이트하였고, 그 중 PostgreSQL 연결시 사용하는 psycopg2-binary 패키지가 업데이트 되면서, 서버 내 PostgreSQL Client 구성이 필요하게 되었습니다.
+이 포스팅은 PostgreSQL Client의 구성과 psycopg2-binary 패키지 업데이트 이슈를 해결하는 과정을 정리합니다.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;기존&lt;/th&gt;
+          &lt;th&gt;Age&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Bob&lt;/td&gt;
+          &lt;td&gt;27&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Alice&lt;/td&gt;
+          &lt;td&gt;23&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;문제&#34;&gt;문제&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;원인&#34;&gt;원인&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;해결&#34;&gt;해결&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;hr&gt;</description>
+      
+    </item>
+    
     <item>
       <title>(Django) filter 올바르게 사용하기 2편</title>
       <link>https://lahion.github.io/posts/kuro-dev2/</link>
