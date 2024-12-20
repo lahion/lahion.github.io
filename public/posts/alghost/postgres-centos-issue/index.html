@@ -10,10 +10,10 @@
 <meta name="application-name" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL) | LAH (기술)블로그" />
 <meta property="og:site_name" content="LAH (기술)블로그" />
 
-<meta name="description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
-<meta itemprop="description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
-<meta property="og:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
-<meta name="twitter:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
+<meta name="description" content="CentOS 8에서 Python을 업데이트 하면서, psycopg2-binary 패키지를 새로 설치할 때 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
+<meta itemprop="description" content="CentOS 8에서 Python을 업데이트 하면서, psycopg2-binary 패키지를 새로 설치할 때 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
+<meta property="og:description" content="CentOS 8에서 Python을 업데이트 하면서, psycopg2-binary 패키지를 새로 설치할 때 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
+<meta name="twitter:description" content="CentOS 8에서 Python을 업데이트 하면서, psycopg2-binary 패키지를 새로 설치할 때 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다." />
 
 <meta property="og:locale" content="ko-kr" />
 <meta name="language" content="ko-kr" />
@@ -52,8 +52,8 @@
             "name": "태더"
         },
         "datePublished": "2024-12-19",
-        "description": "CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.",
-        "wordCount":  52 ,
+        "description": "CentOS 8에서 Python을 업데이트 하면서, psycopg2-binary 패키지를 새로 설치할 때 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.",
+        "wordCount":  378 ,
         "mainEntityOfPage": "True",
         "dateModified": "2024-12-19",
         "image": {
@@ -74,7 +74,7 @@
     <meta property="og:url" content="https://lahion.github.io/posts/alghost/postgres-centos-issue/">
   <meta property="og:site_name" content="LAH (기술)블로그">
   <meta property="og:title" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)">
-  <meta property="og:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
+  <meta property="og:description" content="CentOS 8에서 Python을 업데이트 하면서, psycopg2-binary 패키지를 새로 설치할 때 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
   <meta property="og:locale" content="ko_kr">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -86,13 +86,13 @@
     
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)">
-  <meta name="twitter:description" content="CentOS 8에서 Python을 업데이트 하면서 여러 패키지가 함께 업데이트 되었는데, psycopg2-binary 패키지가 업데이트 되면서 서버 내 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
+  <meta name="twitter:description" content="CentOS 8에서 Python을 업데이트 하면서, psycopg2-binary 패키지를 새로 설치할 때 PostgreSQL 설정에서 이슈가 발생했고, 해결하는 과정을 정리합니다.">
 
 
     
 
     <link rel="canonical" href="https://lahion.github.io/posts/alghost/postgres-centos-issue/">
-    <link href="/style.min.15e210b7168017a77ea59077260c480991718f2c9cee9bf36d5a909cc1f826cb.css" rel="stylesheet">
+    <link href="/style.min.9126f8107ddad3af36fcb870b03d1f9495cc70f02f3d14225f9d944dbcaed3f5.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
     
@@ -197,35 +197,132 @@ stroke-linejoin="round" class="feather feather-home">
             
             <div class="page-content">
                 <h2 id="개요">개요</h2>
-<p>최근 Python 3.6 기반의 레거시 서비스를 Python 3.9로 업데이트하였습니다. 주요 라이브러리들을 전부 업데이트하였고, 그 중 PostgreSQL 연결시 사용하는 psycopg2-binary 패키지가 업데이트 되면서, 서버 내 PostgreSQL Client 구성이 필요하게 되었습니다.
-이 포스팅은 PostgreSQL Client의 구성과 psycopg2-binary 패키지 업데이트 이슈를 해결하는 과정을 정리합니다.</p>
+<p>최근 Python 3.6 기반의 레거시 서비스를 Python 3.9로 업데이트하였습니다. 환경이 변경하면서 서버 내 PostgreSQL Client 구성이 필요하게 되었습니다.
+이 포스팅은 PostgreSQL Client의 구성과 psycopg2-binary 패키지 설치 이슈를 해결하는 과정을 정리합니다.</p>
 <table>
   <thead>
       <tr>
-          <th>기존</th>
-          <th>Age</th>
+          <th>서비스</th>
+          <th>레거시 버전</th>
+          <th>업데이트 버전</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Bob</td>
-          <td>27</td>
+          <td><center>python</center></td>
+          <td><center>3.6</center></td>
+          <td><center>3.9</center></td>
       </tr>
       <tr>
-          <td>Alice</td>
-          <td>23</td>
+          <td><center>django</center></td>
+          <td><center>3.0</center></td>
+          <td><center>4.2</center></td>
       </tr>
   </tbody>
 </table>
 <hr>
 <h2 id="문제">문제</h2>
-<hr>
-<h2 id="원인">원인</h2>
-<hr>
-<h2 id="해결">해결</h2>
-<hr>
-<h2 id="참고">참고</h2>
-<hr>
+<h3 id="1-pg_config-파일을-찾지-못하는-문제">1. pg_config 파일을 찾지 못하는 문제</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pip install psycopg2-binary
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">Error: pg_config executable not found.
+</span></span><span class="line"><span class="cl">    pg_config is required to build psycopg2 from source.  Please add the directory containing pg_config to the <span class="nv">$PATH</span> or specify the full executable path with the option:
+</span></span></code></pre></div><ul>
+<li>PostgreSQL Client가 필요한 상황으로, PostgreSQL Client 설치</li>
+</ul>
+<h4 id="해결-과정">해결 과정</h4>
+<ul>
+<li><a href="https://www.postgresql.org/download/linux/redhat/">PostgreSQL 공식 문서 - RedHat 계열 리눅스 설치 가이드</a> 를 참고</li>
+<li>사용중인 OS 설정에 따라 스크립트가 자동 생성 (아래 표는 실제 선택한 설정값)
+<ul>
+<li>version은 자동 생성되는 스크립트에 표시하기 위함이고, 실제로는 12이상의 모든 버전의 Repo가 등록됨</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>항목</th>
+          <th>선택값</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><center>version</center></td>
+          <td><center>13</center></td>
+      </tr>
+      <tr>
+          <td><center>platform</center></td>
+          <td><center>Red Hat Entgerprise, Rocky, AlmaLiux or Oracle version 8</center></td>
+      </tr>
+      <tr>
+          <td><center>architecture</center></td>
+          <td><center>x86_64</center></td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">$ dnf -qy module <span class="nb">enable</span> postgresql
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">$ dnf install -y postgresql12
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></div><ul>
+<li>자동생성된 스크립트는 server를 설치하기 때문에, 별도로 client만 설치하기 위해 스크립트를 변경하여 실행</li>
+<li>설치된 패키지의 PATH가 자동 설정되지 않기 때문에 환경변수도 설정</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;export PATH=/usr/pgsql-12/bin:$PATH&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span class="line"><span class="cl">$ <span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></div><h3 id="2-libpq-feh-파일을-찾지-못하는-문제">2. libpq-fe.h 파일을 찾지 못하는 문제</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pip install psycopg2-binary
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">In file included from psycopg/adapter_asis.c:28:
+</span></span><span class="line"><span class="cl">      ./psycopg/psycopg.h:36:10: fatal error: libpq-fe.h: No such file or directory
+</span></span><span class="line"><span class="cl">         <span class="m">36</span> <span class="p">|</span> <span class="c1">#include &lt;libpq-fe.h&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">|</span>          ^~~~~~~~~~~~
+</span></span><span class="line"><span class="cl">      compilation terminated.
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></div><ul>
+<li>해당 이슈는 postgresql 라이브러리의 헤더가 없기 때문에 발생하는 에러로, devel 패키지가 필요</li>
+<li>이 과정에서 필요 의존성이 자동으로 해결되지 않아 설치되지 않음</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dnf install -y postgresql12-devel
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">problem: cannot install the best candidate <span class="k">for</span> the job
+</span></span><span class="line"><span class="cl">  - nothing provides perl<span class="o">(</span>IPC::Run<span class="o">)</span> needed by postgresql16-devel-12.22-1PGDG.rhel8.x86_64 from pgdg16
+</span></span></code></pre></div><h4 id="실패한-시도">실패한 시도</h4>
+<ul>
+<li>perl-IPC-Run 패키지를 수동으로 설치하려고 했으나 실패</li>
+<li>rpm 으로 직접 설치하려 시도했으나, 의존성이 지속적으로 걸려 설치가 되지 않음</li>
+<li><em>다른 방법으로 perl-IPC-Run 패키지를 설치</em> 해야한다는 것을 확인</li>
+</ul>
+<h4 id="해결-과정-1">해결 과정</h4>
+<ul>
+<li>CRB(Code Ready Builder) 저장소라는 개념이 존재: 해당 저장소에 관련 패키지가 존재</li>
+<li>CRB 활성화</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ crb <span class="nb">enable</span>
+</span></span><span class="line"><span class="cl">Enabling CRB repo
+</span></span><span class="line"><span class="cl">CRB repo is enabled and named: powertools
+</span></span></code></pre></div><ul>
+<li>CRB 저장소를 활용하여 perl-IPC-Run 패키지 설치</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dnf --enablerepo<span class="o">=</span>powertools install -y perl-IPC-Run
+</span></span></code></pre></div><ul>
+<li>다시 postgresql12-devel 패키지 설치</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dnf install -y postgresql12-devel
+</span></span></code></pre></div><ul>
+<li>다시 psycopg2-binary 패키지 설치</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pip install psycopg2-binary
+</span></span></code></pre></div><h2 id="참고">참고</h2>
+<ul>
+<li><a href="https://database.sarang.net/?inc=read&amp;aid=10427&amp;criteria=pgsql&amp;subcrit=qna&amp;id=0&amp;limit=20&amp;keyword=&amp;page=1">PostgreSQL 설치 관련 질문</a></li>
+<li><a href="https://www.postgresql.org/message-id/798318227.2099534.1708221119012%40mail.yahoo.com">PostgreSQL 메일링 리스트 - IPC::Run 이슈</a></li>
+<li><a href="https://www.postgresql.org/download/linux/redhat/">PostgreSQL Linux/RHEL 다운로드 페이지</a></li>
+<li><a href="https://docs.redhat.com/ko/documentation/red_hat_enterprise_linux/9/html/package_manifest/codereadylinuxbuilder-repository">RHEL CodeReady Linux Builder 저장소 문서</a></li>
+</ul>
 
             </div>
         </article></main>

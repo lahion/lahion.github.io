@@ -15,35 +15,132 @@
       <guid>https://lahion.github.io/posts/alghost/postgres-centos-issue/</guid>
       
       <description>&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
-&lt;p&gt;최근 Python 3.6 기반의 레거시 서비스를 Python 3.9로 업데이트하였습니다. 주요 라이브러리들을 전부 업데이트하였고, 그 중 PostgreSQL 연결시 사용하는 psycopg2-binary 패키지가 업데이트 되면서, 서버 내 PostgreSQL Client 구성이 필요하게 되었습니다.
-이 포스팅은 PostgreSQL Client의 구성과 psycopg2-binary 패키지 업데이트 이슈를 해결하는 과정을 정리합니다.&lt;/p&gt;
+&lt;p&gt;최근 Python 3.6 기반의 레거시 서비스를 Python 3.9로 업데이트하였습니다. 환경이 변경하면서 서버 내 PostgreSQL Client 구성이 필요하게 되었습니다.
+이 포스팅은 PostgreSQL Client의 구성과 psycopg2-binary 패키지 설치 이슈를 해결하는 과정을 정리합니다.&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
-          &lt;th&gt;기존&lt;/th&gt;
-          &lt;th&gt;Age&lt;/th&gt;
+          &lt;th&gt;서비스&lt;/th&gt;
+          &lt;th&gt;레거시 버전&lt;/th&gt;
+          &lt;th&gt;업데이트 버전&lt;/th&gt;
       &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;Bob&lt;/td&gt;
-          &lt;td&gt;27&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;python&lt;/center&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;3.6&lt;/center&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;3.9&lt;/center&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;Alice&lt;/td&gt;
-          &lt;td&gt;23&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;django&lt;/center&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;3.0&lt;/center&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;4.2&lt;/center&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;문제&#34;&gt;문제&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;원인&#34;&gt;원인&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;해결&#34;&gt;해결&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
-&lt;hr&gt;</description>
+&lt;h3 id=&#34;1-pg_config-파일을-찾지-못하는-문제&#34;&gt;1. pg_config 파일을 찾지 못하는 문제&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ pip install psycopg2-binary
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Error: pg_config executable not found.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    pg_config is required to build psycopg2 from source.  Please add the directory containing pg_config to the &lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt; or specify the full executable path with the option:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;PostgreSQL Client가 필요한 상황으로, PostgreSQL Client 설치&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;해결-과정&#34;&gt;해결 과정&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/download/linux/redhat/&#34;&gt;PostgreSQL 공식 문서 - RedHat 계열 리눅스 설치 가이드&lt;/a&gt; 를 참고&lt;/li&gt;
+&lt;li&gt;사용중인 OS 설정에 따라 스크립트가 자동 생성 (아래 표는 실제 선택한 설정값)
+&lt;ul&gt;
+&lt;li&gt;version은 자동 생성되는 스크립트에 표시하기 위함이고, 실제로는 12이상의 모든 버전의 Repo가 등록됨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;항목&lt;/th&gt;
+          &lt;th&gt;선택값&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;center&gt;version&lt;/center&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;13&lt;/center&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;center&gt;platform&lt;/center&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;Red Hat Entgerprise, Rocky, AlmaLiux or Oracle version 8&lt;/center&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;center&gt;architecture&lt;/center&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;center&gt;x86_64&lt;/center&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dnf -qy module &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; postgresql
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dnf install -y postgresql12
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;자동생성된 스크립트는 server를 설치하기 때문에, 별도로 client만 설치하기 위해 스크립트를 변경하여 실행&lt;/li&gt;
+&lt;li&gt;설치된 패키지의 PATH가 자동 설정되지 않기 때문에 환경변수도 설정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;export PATH=/usr/pgsql-12/bin:$PATH&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-libpq-feh-파일을-찾지-못하는-문제&#34;&gt;2. libpq-fe.h 파일을 찾지 못하는 문제&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ pip install psycopg2-binary
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;In file included from psycopg/adapter_asis.c:28:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      ./psycopg/psycopg.h:36:10: fatal error: libpq-fe.h: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         &lt;span class=&#34;m&#34;&gt;36&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;#include &amp;lt;libpq-fe.h&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;          ^~~~~~~~~~~~
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      compilation terminated.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;해당 이슈는 postgresql 라이브러리의 헤더가 없기 때문에 발생하는 에러로, devel 패키지가 필요&lt;/li&gt;
+&lt;li&gt;이 과정에서 필요 의존성이 자동으로 해결되지 않아 설치되지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dnf install -y postgresql12-devel
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;problem: cannot install the best candidate &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the job
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  - nothing provides perl&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;IPC::Run&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; needed by postgresql16-devel-12.22-1PGDG.rhel8.x86_64 from pgdg16
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;실패한-시도&#34;&gt;실패한 시도&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;perl-IPC-Run 패키지를 수동으로 설치하려고 했으나 실패&lt;/li&gt;
+&lt;li&gt;rpm 으로 직접 설치하려 시도했으나, 의존성이 지속적으로 걸려 설치가 되지 않음&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;다른 방법으로 perl-IPC-Run 패키지를 설치&lt;/em&gt; 해야한다는 것을 확인&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;해결-과정-1&#34;&gt;해결 과정&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;CRB(Code Ready Builder) 저장소라는 개념이 존재: 해당 저장소에 관련 패키지가 존재&lt;/li&gt;
+&lt;li&gt;CRB 활성화&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ crb &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Enabling CRB repo
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CRB repo is enabled and named: powertools
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;CRB 저장소를 활용하여 perl-IPC-Run 패키지 설치&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dnf --enablerepo&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;powertools install -y perl-IPC-Run
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;다시 postgresql12-devel 패키지 설치&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dnf install -y postgresql12-devel
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;다시 psycopg2-binary 패키지 설치&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ pip install psycopg2-binary
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://database.sarang.net/?inc=read&amp;amp;aid=10427&amp;amp;criteria=pgsql&amp;amp;subcrit=qna&amp;amp;id=0&amp;amp;limit=20&amp;amp;keyword=&amp;amp;page=1&#34;&gt;PostgreSQL 설치 관련 질문&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/message-id/798318227.2099534.1708221119012%40mail.yahoo.com&#34;&gt;PostgreSQL 메일링 리스트 - IPC::Run 이슈&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/download/linux/redhat/&#34;&gt;PostgreSQL Linux/RHEL 다운로드 페이지&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.redhat.com/ko/documentation/red_hat_enterprise_linux/9/html/package_manifest/codereadylinuxbuilder-repository&#34;&gt;RHEL CodeReady Linux Builder 저장소 문서&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       
     </item>
     

@@ -53,6 +53,13 @@
   &:not(:first-child) {
     border-top: 1px solid $light;
   }
+  .post-item-meta {
+    min-width: 96px;
+
+    @include media-query($on-mobile) {
+      font-size: 16px;
+    }
+  }
 
   .post-item-date {
     min-width: 96px;
