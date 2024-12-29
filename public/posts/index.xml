@@ -6,7 +6,23 @@
     <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>두두의 2024년 회고</title>
+      <link>https://lahion.github.io/posts/dudu_memoirs/</link>
+      <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/dudu_memoirs/</guid>
+      
+      <description>&lt;p&gt;어느새 2024년이 다 지나고 25년이 코앞까지 왔습니다. 올해 초 제가 이렇게 회사생활을 하고있으러라고는 상상도 못했는데, 새삼 신기합니다. 항상 해가 지나도 별 감흥없이 그저 하루가 지난 것처럼 보냈는데 이렇게 회고를 적기위해 돌아보는 이 상황이 되게 신선하게 다가옵니다.&lt;/p&gt;
+&lt;h2 id=&#34;두두&#34;&gt;두두&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;저에게 이 별명 시스템은 정말 어려웠습니다.&lt;br&gt;
+별명만 부르려하니 제 내면의 유교사상이 계속 &amp;lsquo;이거 맞아?&amp;lsquo;하고 반문하는 바람에 힘들었는데 시간이 약이라고 지금은 많이 적응했습니다.&lt;br&gt;
+두두라는 닉네임은 큰 의미는 없습니다. 원래 자주 쓰던 별명이 있는데 공사 구분이 필요하다고 생각이되었습니다. 그래서 친구들에게 추천을 받던 중 제일 멀쩡하고 부르기 쉬워보이는 이름을 택했습니다. (쥬쥬와 미미같은 후보도 있었습니다..^^)&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>CentOS에서 Python 업데이트 시 이슈 (Feat. PostgreSQL)</title>
       <link>https://lahion.github.io/posts/alghost/postgres-centos-issue/</link>
