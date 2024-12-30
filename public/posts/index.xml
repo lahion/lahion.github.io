@@ -6,22 +6,80 @@
     <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 29 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>쿠로 2024년도 회고록 (7 ~ 12월)</title>
-      <link>https://lahion.github.io/posts/kuro-24-memory/</link>
-      <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+      <title>숑숑의 2024년 회고</title>
+      <link>https://lahion.github.io/posts/2024-shongshong/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://lahion.github.io/posts/kuro-24-memory/</guid>
+      <guid>https://lahion.github.io/posts/2024-shongshong/</guid>
       
-      <description>&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+      <description>&lt;p&gt;벌써 회고 글을 작성할 연말이 되었다니 아직도 잘 실감이 나지 않네요.&lt;br&gt;
+그만큼 한 해가 빨리 지나갔다는 뜻이겠지요?&lt;/p&gt;
+&lt;h1 id=&#34;span-stylecolorefea3a-변화의-한-해-span&#34;&gt;&lt;span style=&#34;color:#EFEA3A&#34;&gt; 변화의 한 해 &lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;LAH는 매년 변화무쌍했지만, 올해는 특히 더 변화가 많은 한 해였습니다.&lt;/p&gt;
+&lt;h4 id=&#34;사무실-이사&#34;&gt;사무실 이사&lt;/h4&gt;
 &lt;hr&gt;
-&lt;p&gt;느리면서 빠르게 흘러간 6개월이었습니다. 정말 많은 일이 있었는데 이 글에 얼마나 담아낼 수 있을지 모르겠습니다. 바로 시작해 보겠습니다.&lt;/p&gt;
-&lt;h3 id=&#34;78월-구제&#34;&gt;7~8월 (구제)&lt;/h3&gt;
+&lt;p&gt;연초에 새로운 보금자리를 찾아 당산으로 이사를 왔습니다.&lt;br&gt;
+처음에는 빌딩 이름이 다소 낯설었지만&amp;hellip; (a.k.a. KKO)&lt;br&gt;
+타꾸(타공판 꾸미기)도 하고 새롭게 자리배치도 하면서 이제 꽤 아늑한 공간이 되었습니다.&lt;br&gt;
+이 공간에서 앞으로 더 많은 즐거운 일들이 생기길 기대해 봅니다.&lt;/p&gt;
+&lt;h4 id=&#34;관성-거스르기&#34;&gt;관성 거스르기&lt;/h4&gt;
 &lt;hr&gt;
-&lt;p&gt;대학 4학년에 올라가게 되면서 한가지 고민이 있었습니다. 졸업 문턱에 가까워지고는 있는데 준비된 것이 아무것도 없었음을 느꼈습니다. 아무것도 안하지는 않고 열심히는 한 것 같은데 당시에는 손에 쥐고있는 패가 없는 겁니다. 그러면서도 세월아 네월아하며 1학기를 지나 보냈는데 태더께서 2개월 인턴쉽 제안을 주셔서 감사한 마음으로 수락해 들어오게 됐습니다.
-&lt;br&gt;&lt;br&gt;
-처음 들어왔을땐 많은 생각이 없었습니다. 무엇이든 익히는 것은 공부&amp;lt;실무가 당연한 사실이기도 하며, 여태 해왔던 개발보다 어렵고 힘든 과정이 있을 것이 예상 됐기에 가벼운 마음이었습니다.&lt;/p&gt;</description>
+&lt;p&gt;매일매일 바쁘게 일하고 있지만, 우리는 사실 노는 것도 좋아합니다.😂&lt;br&gt;
+올해는 그동안 해보고 싶었지만 미뤄왔던 것들을 시도해 보았습니다.&lt;br&gt;
+멀리 워크샵 떠나서 재밌게 놀고 오기, 날 좋은 날 한강 피크닉 가기,&lt;br&gt;
+과몰입해서 보드게임 하기, 사무실 꾸미기, 유익한 내용 세미나로 전파하기 등등.&lt;br&gt;
+지금은 또 바쁜 연말을 보내고 있지만, 모든 일에는 사이클이 있는 법이죠.&lt;br&gt;
+관성을 거스를 수 있는 시기가 오면 그때는 또 어떻게 재미나게 보낼 수 있을지 궁리해 봐야겠습니다.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>태더의 2024년 회고</title>
+      <link>https://lahion.github.io/posts/alghost/2024-summary/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/alghost/2024-summary/</guid>
+      
+      <description>&lt;h5 id=&#34;들어가면서&#34;&gt;들어가면서&lt;/h5&gt;
+&lt;p&gt;올해를 돌아보기 위해서, 올해 작성한 라이브러리 제목을 훑었습니다.
+새삼 라이브러리 쓰기를 잘했다는 생각이 드네요.
+회사를 만든다는 것과 만들어가는 것이, 다르다는 것을 느꼈던 것 같습니다.
+회사를 만든다는 것은 이상에 가깝습니다.
+만들어가는 것은 그 과정에서 현실과 타협하는 것 같습니다.&lt;/p&gt;
+&lt;p&gt;내년이면 5년 차에 접어드니,
+그동안 이상을 실천해 보고, 경험이 쌓이고,
+타협도 해본 끝에, 만족할 수 있는 타협이 시작된 한해였습니다.
+조금 더 포장하자면 현실 가능한 이상 정도가 되겠네요.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;좋은 점은 두가지 정도로 정리할 수 있겠네요.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>허시의 2024년 회고</title>
+      <link>https://lahion.github.io/posts/2024-hershey/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/2024-hershey/</guid>
+      
+      <description>&lt;p&gt;올해는 정말 의미 있는 해였습니다.&lt;br&gt;
+크게 두가지로 나뉘겠네요.&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;큰 덩어리의 협업 프로젝트를 (거의 다) 완성했다는 것과&lt;/li&gt;
+&lt;li&gt;팀의 규모가 커진 것입니다.&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;거의-다-완성한-협업-프로젝트&#34;&gt;(거의 다) 완성한 협업 프로젝트&lt;/h3&gt;
+&lt;p&gt;오픈까지 조금 더 고생해야 하겠지만, 회고인만큼 지금까지 만들어낸 것에 대한 대단함에만 초점을 맞춰볼게요.&lt;br&gt;
+아마 이 프로젝트는 모두에게 챌린징한 일이었을 겁니다.&lt;br&gt;
+여전히 그렇다는 걸 알고 있습니다..ㅜ (화이팅)&lt;/p&gt;
+&lt;p&gt;제게도 그랬습니다.&lt;/p&gt;
+&lt;p&gt;일반 외주와는 완전히 달랐습니다.&lt;br&gt;
+주로 외주 프로젝트는 이미 정해진 기획을 그대로 옮기는 것에 가깝습니다.&lt;br&gt;
+당연히 누락이 있지만 나름의 완성도가 있습니다.&lt;br&gt;
+UI/UX 관점에서만 미숙한 부분을 손 보는 정도지, 기획에 크게 개입할 일이 없습니다.&lt;br&gt;&lt;/p&gt;</description>
       
     </item>
     
@@ -38,6 +96,20 @@
 &lt;p&gt;저에게 이 별명 시스템은 정말 어려웠습니다.&lt;br&gt;
 별명만 부르려하니 제 내면의 유교사상이 계속 &amp;lsquo;이거 맞아?&amp;lsquo;하고 반문하는 바람에 힘들었는데 시간이 약이라고 지금은 많이 적응했습니다.&lt;br&gt;
 두두라는 닉네임은 큰 의미는 없습니다. 원래 자주 쓰던 별명이 있는데 공사 구분이 필요하다고 생각이되었습니다. 그래서 친구들에게 추천을 받던 중 제일 멀쩡하고 부르기 쉬워보이는 이름을 택했습니다. (쥬쥬와 미미같은 후보도 있었습니다..^^)&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>회고라는 것을 처음 해보는 사람의 2024년 회고</title>
+      <link>https://lahion.github.io/posts/joy/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/joy/</guid>
+      
+      <description>&lt;h2 id=&#34;첫-동료-x270bx1f3fb&#34;&gt;첫 동료 ✋🏻&lt;/h2&gt;
+&lt;p&gt;2024년이 시작될때쯤 많은 변화들이 있었다. 그 중 나를 제일 처음 맞이했던 변화는 내 옆에 앉아계시던 동료 (동료라기 보다 선배의 가까운 분)의 퇴사였다. 회사에서 가장 많은 이야기를 나누고 가장 오랜시간 옆자리에서 작업을 했는데 갑자기 떠나시게 되어 굉장히 놀랐다.&lt;br&gt;
+그 분은 혼자 끙끙대며 작업하는 23살짜리 신입이 안쓰러우셨는지 옆에서 많은 질문을 받아주시고 내가 이해를 못하는 것 같으면 회의실로 이동해 칠판에 그림을 그리면서 설명해주셨다.
+맡은 일이 많으셔서 한편으론 시간이 아까우셨을수도 있는데 기꺼이 내어주셔서 감사했다. 나도 나중에 누군가에게 질문을 받게 되는 연차가 된다면 친절하고 쉽게 잘 설명해주는 선배가 되어야지 생각했다.&lt;/p&gt;</description>
       
     </item>
     

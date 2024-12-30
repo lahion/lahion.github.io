@@ -1,4 +1,4 @@
 ---
 title: Home
-author: Taether
+author: 태더
 ---
