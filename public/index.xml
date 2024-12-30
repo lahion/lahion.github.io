@@ -6,7 +6,29 @@
     <description>Recent content in Home on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 28 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>태더의 2024년 회고</title>
+      <link>https://lahion.github.io/posts/alghost/2024-summary/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/alghost/2024-summary/</guid>
+      
+      <description>&lt;h5 id=&#34;들어가면서&#34;&gt;들어가면서&lt;/h5&gt;
+&lt;p&gt;올해를 돌아보기 위해서, 올해 작성한 라이브러리 제목을 훑었습니다.
+새삼 라이브러리 쓰기를 잘했다는 생각이 드네요.
+회사를 만든다는 것과 만들어가는 것이, 다르다는 것을 느꼈던 것 같습니다.
+회사를 만든다는 것은 이상에 가깝습니다.
+만들어가는 것은 그 과정에서 현실과 타협하는 것 같습니다.&lt;/p&gt;
+&lt;p&gt;내년이면 5년 차에 접어드니,
+그동안 이상을 실천해 보고, 경험이 쌓이고,
+타협도 해본 끝에, 만족할 수 있는 타협이 시작된 한해였습니다.
+조금 더 포장하자면 현실 가능한 이상 정도가 되겠네요.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;좋은 점은 두가지 정도로 정리할 수 있겠네요.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>두두의 2024년 회고</title>
       <link>https://lahion.github.io/posts/dudu_memoirs/</link>
