@@ -6,7 +6,25 @@
     <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 28 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>쿠로 2024년도 회고록 (7 ~ 12월)</title>
+      <link>https://lahion.github.io/posts/kuro-24-memory/</link>
+      <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/kuro-24-memory/</guid>
+      
+      <description>&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;느리면서 빠르게 흘러간 6개월이었습니다. 정말 많은 일이 있었는데 이 글에 얼마나 담아낼 수 있을지 모르겠습니다. 바로 시작해 보겠습니다.&lt;/p&gt;
+&lt;h3 id=&#34;78월-구제&#34;&gt;7~8월 (구제)&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;대학 4학년에 올라가게 되면서 한가지 고민이 있었습니다. 졸업 문턱에 가까워지고는 있는데 준비된 것이 아무것도 없었음을 느꼈습니다. 아무것도 안하지는 않고 열심히는 한 것 같은데 당시에는 손에 쥐고있는 패가 없는 겁니다. 그러면서도 세월아 네월아하며 1학기를 지나 보냈는데 태더께서 2개월 인턴쉽 제안을 주셔서 감사한 마음으로 수락해 들어오게 됐습니다.
+&lt;br&gt;&lt;br&gt;
+처음 들어왔을땐 많은 생각이 없었습니다. 무엇이든 익히는 것은 공부&amp;lt;실무가 당연한 사실이기도 하며, 여태 해왔던 개발보다 어렵고 힘든 과정이 있을 것이 예상 됐기에 가벼운 마음이었습니다.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>두두의 2024년 회고</title>
       <link>https://lahion.github.io/posts/dudu_memoirs/</link>
@@ -152,7 +170,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ pip install psycopg2-binary
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://database.sarang.net/?inc=read&amp;amp;aid=10427&amp;amp;criteria=pgsql&amp;amp;subcrit=qna&amp;amp;id=0&amp;amp;limit=20&amp;amp;keyword=&amp;amp;page=1&#34;&gt;PostgreSQL 설치 관련 질문&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://database.sarang.net/?inc=read&amp;aid=10427&amp;criteria=pgsql&amp;subcrit=qna&amp;id=0&amp;limit=20&amp;keyword=&amp;page=1&#34;&gt;PostgreSQL 설치 관련 질문&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/message-id/798318227.2099534.1708221119012%40mail.yahoo.com&#34;&gt;PostgreSQL 메일링 리스트 - IPC::Run 이슈&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/download/linux/redhat/&#34;&gt;PostgreSQL Linux/RHEL 다운로드 페이지&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.redhat.com/ko/documentation/red_hat_enterprise_linux/9/html/package_manifest/codereadylinuxbuilder-repository&#34;&gt;RHEL CodeReady Linux Builder 저장소 문서&lt;/a&gt;&lt;/li&gt;
