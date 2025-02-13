@@ -2,20 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://lahion.github.io/posts/alghost/huge-svg-d3/</loc>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://lahion.github.io/</loc>
-<<<<<<< HEAD
-    <lastmod>2024-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lahion.github.io/posts/</loc>
-    <lastmod>2024-12-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lahion.github.io/posts/kuro-24-memory/</loc>
-    <lastmod>2024-12-29T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lahion.github.io/posts/</loc>
-    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lahion.github.io/posts/2024-shongshong/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
@@ -25,7 +19,9 @@
   </url><url>
     <loc>https://lahion.github.io/posts/2024-hershey/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
->>>>>>> 114329e4722c8f702fb884dc8d0ea66a3b8bca59
+  </url><url>
+    <loc>https://lahion.github.io/posts/kuro-24-memory/</loc>
+    <lastmod>2024-12-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lahion.github.io/posts/dudu_memoirs/</loc>
     <lastmod>2024-12-28T00:00:00+00:00</lastmod>

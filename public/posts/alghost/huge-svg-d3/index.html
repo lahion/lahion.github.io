@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko-kr"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">D3를 활용한 고용량 SVG 에셋 처리 | LAH (기술)블로그</title>
+<meta property="og:title" content="D3를 활용한 고용량 SVG 에셋 처리 | LAH (기술)블로그" />
+<meta name="twitter:title" content="D3를 활용한 고용량 SVG 에셋 처리 | LAH (기술)블로그" />
+<meta itemprop="name" content="D3를 활용한 고용량 SVG 에셋 처리 | LAH (기술)블로그" />
+<meta name="application-name" content="D3를 활용한 고용량 SVG 에셋 처리 | LAH (기술)블로그" />
+<meta property="og:site_name" content="LAH (기술)블로그" />
+
+<meta name="description" content="Next.js에서 고용량 SVG 에셋을 처리하는 방법을 소개합니다.">
+<meta itemprop="description" content="Next.js에서 고용량 SVG 에셋을 처리하는 방법을 소개합니다." />
+<meta property="og:description" content="Next.js에서 고용량 SVG 에셋을 처리하는 방법을 소개합니다." />
+<meta name="twitter:description" content="Next.js에서 고용량 SVG 에셋을 처리하는 방법을 소개합니다." />
+
+<meta property="og:locale" content="ko-kr" />
+<meta name="language" content="ko-kr" />
+
+  <link rel="alternate" hreflang="ko-kr" href="https://lahion.github.io/posts/alghost/huge-svg-d3/" title="한국어" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-02-13T00:00:00Z />
+    <meta property="article:published_time" content=2025-02-13T00:00:00Z />
+    <meta property="og:url" content="https://lahion.github.io/posts/alghost/huge-svg-d3/" />
+
+    
+    <meta property="og:article:author" content="LAH" />
+    <meta property="article:author" content="LAH" />
+    <meta name="author" content="LAH" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "D3를 활용한 고용량 SVG 에셋 처리",
+        "author": {
+            "@type": "Person",
+            "name": "태더"
+        },
+        "datePublished": "2025-02-13",
+        "description": "Next.js에서 고용량 SVG 에셋을 처리하는 방법을 소개합니다.",
+        "wordCount":  361 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-02-13",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "LAH (기술)블로그"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+    
+    <meta property="og:url" content="https://lahion.github.io/posts/alghost/huge-svg-d3/">
+  <meta property="og:site_name" content="LAH (기술)블로그">
+  <meta property="og:title" content="D3를 활용한 고용량 SVG 에셋 처리">
+  <meta property="og:description" content="Next.js에서 고용량 SVG 에셋을 처리하는 방법을 소개합니다.">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-13T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="D3를 활용한 고용량 SVG 에셋 처리">
+  <meta name="twitter:description" content="Next.js에서 고용량 SVG 에셋을 처리하는 방법을 소개합니다.">
+
+
+    
+
+    <link rel="canonical" href="https://lahion.github.io/posts/alghost/huge-svg-d3/">
+    <link href="/style.min.9126f8107ddad3af36fcb870b03d1f9495cc70f02f3d14225f9d944dbcaed3f5.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://lahion.github.io/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://lahion.github.io/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">D3를 활용한 고용량 SVG 에셋 처리</h1>
+                
+                <div class="post-meta">
+                    
+                    
+                    <time datetime="2025-02-13T00:00:00&#43;00:00" itemprop="datePublished"> 2025-02-13
+                    </time>
+                    
+                    
+                    <author>태더</author>
+                    
+                </div>
+            </header>
+            
+            <div class="page-content">
+                <h2 id="개요">개요</h2>
+<p>최근 Next.js 프로젝트에서 고용량 SVG 에셋을 처리할 일이 있었습니다.
+이 글에서 말하는 고용량 SVG는 5MB 이상의 파일을 말하는데, 이러한 파일이 프로젝트 내 다수 존재할 경우 컴파일을 해도 성능이 좋지 않을 뿐 더러, 개발 서버에서는 메모리 사용량이 매우 많아지게 됩니다.
+이 글에서는 이러한 이슈를 해결하기 위해, D3 라이브러리를 활용하여 SVG를 로드하고 이벤트를 처리하는 방법을 소개합니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>서비스</th>
+          <th>버전</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><center>Next.js</center></td>
+          <td><center>14.2.23</center></td>
+      </tr>
+      <tr>
+          <td><center>D3</center></td>
+          <td><center>7.9.0</center></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="문제-요구사항">문제 (요구사항)</h2>
+<ul>
+<li>svg 요소로 렌더링 되어야 한다.</li>
+<li>svg 의 하위 path 요소에 대해서 Click, Hover 이벤트를 처리할 수 있어야 한다.</li>
+<li>Next.js 개발 서버로 실행시 string으로 로드되지 않아야 한다. (메모리 사용량 이슈)</li>
+</ul>
+<h3 id="실패케이스-nextimage-사용">실패케이스: next/image 사용</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Image</span> <span class="kr">from</span> <span class="s2">&#34;next/image&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">SvgComponent() {</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Image</span>
+</span></span><span class="line"><span class="cl">      <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Test&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">src</span><span class="o">=</span><span class="s">&#34;/path/to/image.svg&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">alt</span><span class="o">=</span><span class="s">&#34;SVG&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">width</span><span class="o">=</span><span class="p">{</span><span class="mi">100</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="na">height</span><span class="o">=</span><span class="p">{</span><span class="mi">100</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span>
+</span></span><span class="line"><span class="cl">  <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Test&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">loading</span><span class="o">=</span><span class="s">&#34;lazy&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">width</span><span class="o">=</span><span class="s">&#34;100&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">decoding</span><span class="o">=</span><span class="s">&#34;async&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">data-nimg</span><span class="o">=</span><span class="s">&#34;1&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:transparent&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">src</span><span class="o">=</span><span class="s">&#34;/path/to/image.svg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">/&gt;</span>
+</span></span></code></pre></div><ul>
+<li>이처럼 img 태그로 렌더링되기 때문에, 이벤트를 처리할 수 없다.</li>
+</ul>
+<h3 id="실패케이스-svgrwebpack-사용">실패케이스: @svgr/webpack 사용</h3>
+<ul>
+<li>빌드 단계에서 svg 파일을 컴포넌트로 만들어 주는 라이브러리</li>
+<li>설정 방법은 <a href="https://react-svgr.com/docs/next/">공식 문서</a> 참고</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">ImageSvg</span> <span class="kr">from</span> <span class="s2">&#34;/path/to/image.svg&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">SvgComponent() {</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">ImageSvg</span> <span class="na">width</span><span class="o">=</span><span class="p">{</span><span class="mi">100</span><span class="p">}</span> <span class="na">height</span><span class="o">=</span><span class="p">{</span><span class="mi">100</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;100&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</span></span></code></pre></div><ul>
+<li>svg로 렌더링은 되지만, svg에 포함된 string이 개발 서버에서 문자열로 로드되어 메모리 사용량이 많아지는 문제 발생</li>
+<li>5~10MB 이상의 svg 파일 10개 내외 사용시 메모리 점유율이 8기가 이상으로 증가</li>
+<li><strong>svg에 포함된 base64 이미지가 전부 문자열로 로드 됨</strong></li>
+</ul>
+<h3 id="성공케이스-d3-라이브러리-사용">성공케이스: d3 라이브러리 사용</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ npm install d3 @types/d3
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">d3</span> <span class="kr">from</span> <span class="s2">&#34;d3&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">MouseEvent</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;react&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">onClick</span><span class="o">:</span> <span class="p">(</span><span class="nx">e</span>: <span class="kt">MouseEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">SvgComponent</span><span class="p">(</span><span class="nx">props</span>: <span class="kt">Props</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="s2">&#34;svg-key&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">d3</span><span class="p">.</span><span class="nx">xml</span><span class="p">(</span><span class="s2">&#34;/path/to/image.svg&#34;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span>: <span class="kt">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="sb">`#</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> svg`</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="sb">`#</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">).</span><span class="nx">append</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="p">{</span><span class="nx">id</span><span class="p">}</span> <span class="p">{</span><span class="na">...props</span><span class="p">}&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;100&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</span></span></code></pre></div><ul>
+<li>StrictMode 등에서 중복 렌더링될 수 있기 때문에 append 전에 remove 처리</li>
+<li>svg 요소로 렌더링되어 이벤트 처리가 가능</li>
+<li>개발 서버에서 문자열로 로드되지 않아 메모리 사용량이 적음</li>
+</ul>
+<h3 id="주의-사항">주의 사항</h3>
+<ul>
+<li>d3.xml 함수는 파일에 포함된 모든 문자열을 처리하기 때문에 minified svg가 아니라면 불필요한 text 노드가 생성된다. (개행, 스페이스 등)</li>
+<li>렌더링 시 remove 함수를 통해 중복 레더링 되는 경우를 사전에 방지해야한다.</li>
+<li>만약 svg를 SSR에서 렌더링해야하는 경우 jsdom 라이브러리를 활용하여 가상의 document를 생성한 후 CSR에 전달될 수 있도록 구현해야 한다. (hydration 이슈 방지)</li>
+</ul>
+<h2 id="참고">참고</h2>
+<ul>
+<li><a href="https://d3js.org/d3-fetch#xml">D3 XML</a></li>
+<li><a href="http://zevross.com/blog/2019/08/20/load-external-svgs-with-d3-v5/">Load external SVGs with d3</a></li>
+<li><a href="https://www.fabiofranchino.com/blog/how-to-inject-external-svg-with-d3/">How to inject an external SVG with D3.js</a></li>
+</ul>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://gitlab.com/lahions" target="_blank" rel="noopener noreferrer me"
+    title="Gitlab">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z">
+    </path>
+</svg>
+</a>
+<a href="https://www.lahion.com" target="_blank" rel="noopener noreferrer me"
+    title="Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="" height="" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+    <title>Home</title>
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</a>
+<a href="https://www.instagram.com/lah_company/" target="_blank" rel="noopener noreferrer me"
+    title="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+</a>
+<a href="https://www.youtube.com/@lah6447" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 LAH.
+        Powered by <a href="https://www.lahion.com" target="_blank" rel="noopener">LAH</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://lahion.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
