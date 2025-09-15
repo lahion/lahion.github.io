@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko-kr"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">react에서 swiper 잘 쓰기 | LAH (기술)블로그</title>
+<meta property="og:title" content="react에서 swiper 잘 쓰기 | LAH (기술)블로그" />
+<meta name="twitter:title" content="react에서 swiper 잘 쓰기 | LAH (기술)블로그" />
+<meta itemprop="name" content="react에서 swiper 잘 쓰기 | LAH (기술)블로그" />
+<meta name="application-name" content="react에서 swiper 잘 쓰기 | LAH (기술)블로그" />
+<meta property="og:site_name" content="LAH (기술)블로그" />
+
+<meta name="description" content="react에서 swiper 잘 쓰기">
+<meta itemprop="description" content="react에서 swiper 잘 쓰기" />
+<meta property="og:description" content="react에서 swiper 잘 쓰기" />
+<meta name="twitter:description" content="react에서 swiper 잘 쓰기" />
+
+<meta property="og:locale" content="ko-kr" />
+<meta name="language" content="ko-kr" />
+
+  <link rel="alternate" hreflang="ko-kr" href="https://lahion.github.io/posts/2025-joy-dev1/" title="한국어" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-09-15T00:00:00Z />
+    <meta property="article:published_time" content=2025-09-15T00:00:00Z />
+    <meta property="og:url" content="https://lahion.github.io/posts/2025-joy-dev1/" />
+
+    
+    <meta property="og:article:author" content="LAH" />
+    <meta property="article:author" content="LAH" />
+    <meta name="author" content="LAH" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "react에서 swiper 잘 쓰기",
+        "author": {
+            "@type": "Person",
+            "name": "조이"
+        },
+        "datePublished": "2025-09-15",
+        "description": "react에서 swiper 잘 쓰기",
+        "wordCount":  563 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-09-15",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "LAH (기술)블로그"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.140.1">
+
+    
+    <meta property="og:url" content="https://lahion.github.io/posts/2025-joy-dev1/">
+  <meta property="og:site_name" content="LAH (기술)블로그">
+  <meta property="og:title" content="react에서 swiper 잘 쓰기">
+  <meta property="og:description" content="react에서 swiper 잘 쓰기">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-15T00:00:00+00:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="react에서 swiper 잘 쓰기">
+  <meta name="twitter:description" content="react에서 swiper 잘 쓰기">
+
+
+    
+
+    <link rel="canonical" href="https://lahion.github.io/posts/2025-joy-dev1/">
+    <link href="/style.min.9126f8107ddad3af36fcb870b03d1f9495cc70f02f3d14225f9d944dbcaed3f5.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://lahion.github.io/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://lahion.github.io/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">react에서 swiper 잘 쓰기</h1>
+                
+                <div class="post-meta">
+                    
+                    
+                    <time datetime="2025-09-15T00:00:00&#43;00:00" itemprop="datePublished"> 2025-09-15
+                    </time>
+                    
+                    
+                    <author>조이</author>
+                    
+                </div>
+            </header>
+            
+            <div class="page-content">
+                <p>react에서 스와이퍼 모달을 쓰면서 겪었던 네비게이션 관련된 반복적인 이슈 발생을 막기위해 기록으로 기억하려고 작성하는 글입니다.<br></p>
+<h2 id="개요">개요</h2>
+<hr>
+<h3 id="문제상황">문제상황</h3>
+<ol>
+<li>ref를 이용한 네비게이션 버튼이 작동하지 않음</li>
+<li>로컬에서는 이상없고, 실배포한 환경에서만 작동하지 않음</li>
+</ol>
+<h2 id="본론">본론</h2>
+<hr>
+<h3 id="수정-전">수정 전</h3>
+<ul>
+<li>기존에는 navigation 버튼을 null로 초기화 해놓고, onInit을 이용해 Swiper가 내부적으로 초기화될 때 호출하도록 설정</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-react" data-lang="react"><span class="line"><span class="cl">  <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">navigationPrevRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">navigationNextRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">swiperInit</span> <span class="o">=</span> <span class="p">(</span><span class="nx">swiper</span><span class="o">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">swiper</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">prevEl</span> <span class="o">=</span> <span class="nx">navigationPrevRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">swiper</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">nextEl</span> <span class="o">=</span> <span class="nx">navigationNextRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">swiper</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">swiper</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Swiper</span>
+</span></span><span class="line"><span class="cl">    <span class="na">onInit</span><span class="o">=</span><span class="p">{</span><span class="nx">swiperInit</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">rewind</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">navigation</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">modules</span><span class="o">=</span><span class="p">{[</span><span class="nx">Navigation</span><span class="p">,</span> <span class="nx">Pagination</span><span class="p">,</span> <span class="nx">Autoplay</span><span class="p">,</span> <span class="nx">Pagination</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Swiper</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Box</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;text-16-r-2 pagination&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Image</span>
+</span></span><span class="line"><span class="cl">            <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/rolling_left.png&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">alt</span><span class="o">=</span><span class="s">&#34;prev&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">navigationPrevRef</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Image</span>
+</span></span><span class="line"><span class="cl">            <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/rolling_right.png&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">alt</span><span class="o">=</span><span class="s">&#34;next&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">navigationNextRef</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><h3 id="수정-전-코드의-문제점">수정 전 코드의 문제점</h3>
+<ol>
+<li>ref 타이밍 문제</li>
+</ol>
+<ul>
+<li>ref 값(navigationPrevRef.current, navigationNextRef.current)이 초기 렌더 시 null일 수 있음.</li>
+<li>배포 환경에서는 DOM 생성 타이밍이 엄격하게 적용되어 ref가 설정되지 않을 수 있음.</li>
+</ul>
+<ol start="2">
+<li>네비게이션 버튼이 swiper 내부를 참조하고 있지 않음</li>
+</ol>
+<ul>
+<li>Swiper의 navigation.prevEl, nextEl이 Swiper 외부에 위치해있어 Swiper가 해당 DOM을 제대로 인식하지 못할 가능성 있음.</li>
+</ul>
+<p>++ 추가적으로 확인해야 할 것, z-index 의 값</p>
+<h2 id="수정-후">수정 후</h2>
+<ul>
+<li>useEffect, onSwiper을 이용해서 swiper가 렌더 된 이후에 navigation 연결</li>
+<li>swiper.navigation.init() 및 update()을 수동으로 호출</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-react" data-lang="react"><span class="line"><span class="cl">  <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">navigationPrevRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">navigationNextRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">swiperInstance</span> <span class="o">&amp;&amp;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">navigationPrevRef</span><span class="p">.</span><span class="nx">current</span> <span class="o">&amp;&amp;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">navigationNextRef</span><span class="p">.</span><span class="nx">current</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">swiperInstance</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">prevEl</span> <span class="o">=</span> <span class="nx">navigationPrevRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">swiperInstance</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">nextEl</span> <span class="o">=</span> <span class="nx">navigationNextRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">swiperInstance</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">swiperInstance</span><span class="p">.</span><span class="nx">navigation</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">swiperInstance</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Swiper</span>
+</span></span><span class="line"><span class="cl">    <span class="na">onSwiper</span><span class="o">=</span><span class="p">{</span><span class="nx">setSwiperInstance</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">rewind</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">navigation</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">modules</span><span class="o">=</span><span class="p">{[</span><span class="nx">Navigation</span><span class="p">,</span> <span class="nx">Pagination</span><span class="p">,</span> <span class="nx">Autoplay</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Swiper</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Box</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;text-16-r-2 pagination&#34;</span> <span class="na">role</span><span class="o">=</span><span class="s">&#34;button&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Image</span>
+</span></span><span class="line"><span class="cl">            <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/rolling_left.png&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">alt</span><span class="o">=</span><span class="s">&#34;prev&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">navigationPrevRef</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Image</span>
+</span></span><span class="line"><span class="cl">            <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/rolling_right.png&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">alt</span><span class="o">=</span><span class="s">&#34;next&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">navigationNextRef</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><h3 id="수정-후-코드에-적용한-해결방법">수정 후 코드에 적용한 해결방법</h3>
+<ol>
+<li>ref 타이밍 문제</li>
+</ol>
+<ul>
+<li>ref 값(navigationPrevRef.current, navigationNextRef.current)이 초기 렌더 시 null일 수 있음.</li>
+<li>배포 환경에서는 DOM 생성 타이밍이 엄격하게 적용되어 ref가 설정되지 않을 수 있음.</li>
+</ul>
+<p><strong>-&gt; React에서 DOM은 렌더링 이후에야 완전히 구성되기 때문에, ref에 연결된 DOM이 Swiper보다 늦게 준비되는 경우가 생김. 특히 배포 환경에서는 렌더 타이밍이 더 빠르거나 SSR 처리 차이로 인해 문제가 드러나기도 함. <U>swiper 렌더 이후 실행되도록 지연이 필요.</U></strong><br>
+<strong>-&gt; swiper에서는 ref를 직접 넣는 방식을 지원하지 않고 있기 때문에 onSwiper 사용</strong></p>
+<blockquote>
+<p>Q. ref를 swiper에 연결하는 방법은 onInit도 있는데 onSwiper를 사용하는 이유는?<br>
+A. onInit는 초기 렌더 중에도 실행되는 반면 <U>onSwiper는 Swiper 인스턴스를 React로 넘겨주는 역할이기 때문에 렌더 이후 실행되므로 안정적이기 때문</U></p>
+</blockquote>
+<blockquote>
+<p>Q. 지연하는 방법으로 setTimeout이 아닌 useEffect를 사용하는 이유는?<br>
+A. DOM의 준비상태를 보장 못하는 setTimeout보다는 <U>useEffect를 사용하는 것이 적절함</U><br></p>
+</blockquote>
+<br>
+<ol start="2">
+<li>네비게이션 버튼이 swiper 내부를 참조하고 있지 않음</li>
+</ol>
+<ul>
+<li>Swiper의 navigation.prevEl, nextEl이 Swiper 외부에 위치해있어 Swiper가 해당 DOM을 제대로 인식하지 못할 가능성 있음.</li>
+</ul>
+<p><strong>-&gt; useEffect 내부에서 ref.current를 확인하고 navigation을 설정하고, swiper.navigation.init() 및 update() 수동 호출</strong><br>
+-&gt; 처음에는 swiper 외부를 참조하고 있는 것을 막기 위해 swiper에 navigation과 onBeforeInit을 추가했었는데, onSwiper를 호출하면서 중복된 코드라는 것을 깨닫고 수정함.</p>
+<blockquote>
+<p>Q. useEffect 내부에서 네비게이션을 연결하고 재초기화 하는 이유?<br>
+A. onSwiper는 swiper가 초기화 된 이후 실행, 그런데 navigation 모듈은 이미 실행 끝임. 이때 prevEl/nextEl을 바꾸더라도 Swiper는 이미 navigation 버튼을 찾으려고 시도한 후이기 때문에, 다시 navigation을 자동으로 초기화하지 않음. 그렇기 때문에 네비게이션을 다시 연결하고 재초기화 하는 과정이 필요.</p>
+</blockquote>
+<br>
+<h2 id="실서버에서만-일어나는-문제를-로컬에서-확인하고-싶다면">실서버에서만 일어나는 문제를 로컬에서 확인하고 싶다면?</h2>
+<pre tabindex="0"><code>npm run build
+npm run start
+</code></pre><h2 id="결론">결론</h2>
+<h3 id="마치며">마치며</h3>
+<p>자주 쓰는 라이브러리나 라이프사이클이 아니라면 모든 라이브러리 그리고 라이브러리 내부 옵션들의 실행시점을 파악하기는 어렵다고 생각했다. 그런데 그것을 모두 파악하고 있지 않더라도 렌더링 시점을 궁금해하고 이슈가 발생했을때 렌더링 시점을 분석하고 파악해 가는 과정이 더 중요하다는 생각이 든다. 지금 글을 쓰면서도 react, react swiper에서 더 권장하는 방향은 무엇인지 찾아보며 수정을 거듭했다. (정답이 있다면) 정답과 가까워지는 느낌이 들긴 하지만 여전히 부족하다는 생각이 든다. 그리고 로컬에서는 잘 되지만 실서버에서는 안되는 이슈들을 가끔 보는데, 처음에는 원인조차 감이 안잡히고 당황했지만 이번 이슈를 통해서 렌더링 시점이 원인이 될 수도 있다는 것을 배운 것 같다.😓</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://gitlab.com/lahions" target="_blank" rel="noopener noreferrer me"
+    title="Gitlab">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z">
+    </path>
+</svg>
+</a>
+<a href="https://www.lahion.com" target="_blank" rel="noopener noreferrer me"
+    title="Home">
+    <svg xmlns="http://www.w3.org/2000/svg" width="" height="" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+    <title>Home</title>
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</a>
+<a href="https://www.instagram.com/lah_company/" target="_blank" rel="noopener noreferrer me"
+    title="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+</a>
+<a href="https://www.youtube.com/@lah6447" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 LAH.
+        Powered by <a href="https://www.lahion.com" target="_blank" rel="noopener">LAH</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script src="https://lahion.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
