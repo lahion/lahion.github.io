@@ -6,7 +6,62 @@
     <description>Recent content in Home on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>개발서버에서만 나는 FE 에러 해결하기</title>
+      <link>https://lahion.github.io/posts/2025-joy-dev2/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/2025-joy-dev2/</guid>
+      
+      <description>&lt;p&gt;개발서버, 스테이징 서버에서만 나는 에러를 일일이 배포 후에 확인하는 과정이 아닌, 로컬처럼 실시간으로 확인 할 수 있는 방법을 알게 되어 기록으로 남겨두려고 합니다. &lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;문제상황&#34;&gt;문제상황&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;로컬에서는 이상이 없고, 개발서버에서만 에러가 발생하는 상황&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;본론&#34;&gt;본론&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;개발서버를-개발모드로-열기&#34;&gt;개발서버를 개발모드로 열기&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh root@192.168.0.57 // 1. 57서버 접속
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /opt/&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;-dev/web // 2. 개발서버 경로 접속
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim Dockerfile // 3. 도커파일 수정을 위해 vim 으로 수정하는 명령어 입력
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+4. 개발모드로 실행할 수 있도록 아래처럼 수정
+&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;c1&#34;&gt;#&amp;amp;&amp;amp; \&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;c1&#34;&gt;#11     npm run build&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;c1&#34;&gt;#17 CMD [&amp;#34;pm2-runtime&amp;#34;, &amp;#34;start&amp;#34;, &amp;#34;./node_modules/.bin/next&amp;#34;, &amp;#34;--&amp;#34;, &amp;#34;start&amp;#34;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;m&#34;&gt;17&lt;/span&gt; CMD &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;npm&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;run&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;dev&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh docker.build // 5. 도커 빌드
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh docker.run // 6. 도커 런
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h4 id=&#34;-간단히-살펴보는-vim-명령어&#34;&gt;* 간단히 살펴보는 vim 명령어&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;i // insert
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;p // 붙여넣기
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;y // 복사
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yy // 현재 줄 복사하기
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;c // 잘라내기
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:wq // 저장 후 나가기
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:q // 저장하지 않고 나가기
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;개발모드-환경에서-코드-수정&#34;&gt;개발모드 환경에서 코드 수정&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker ps // 1. 도커 컨테이너 리스트 확인
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;-frontend bash // 2. &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]-frontend:&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;dev가&lt;/span&gt;&lt;span class=&#34;p&#34;&gt; 있다면 명령어 실행
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;apt-get update // 3. 사용 가능한 패키지들과 그 버전에 대한 정보 업데이트 하는 명령어
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;apt-get install vim // 4. vim이 안깔려있을것이기 때문에 설치 필요
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;vim &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;파일&lt;/span&gt;&lt;span class=&#34;p&#34;&gt; 경로&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt; // 5. 파일 수정
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ssr에서-나는-에러-출력하기&#34;&gt;ssr에서 나는 에러 출력하기&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker logs &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;-frontend // 1. 실행 후 명령어 입력
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;마치며&#34;&gt;마치며&lt;/h3&gt;
+&lt;p&gt;항상 일하면서 제일 답답한 상황이 로컬에서는 재현이 안되는 에러가 개발서버나 스테이징에서 발생할 때인것 같다. 이제 개발모드로 실행하는 방법을 아니까 개발서버를 개발모드로 열어서 실시간으로 작업하고 ssr 에러도 찍어볼 수 있으니 이전처럼 답답해하며 작업 후 개발서버 배포 후에 확인하는 반복적인 과정을 거치지 않아도 될 것 같다. 개발모드로 작업하는 것은 사실 생각하지 못했던 방법인데, 이번에 기록을 잘 해놔서 앞으로 같은 상황이 발생했을때 시간낭비 하지 않고, 작업을 할 수 있었으면 좋겠다.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>react에서 swiper 잘 쓰기</title>
       <link>https://lahion.github.io/posts/2025-joy-dev1/</link>
