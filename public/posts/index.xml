@@ -6,7 +6,52 @@
     <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>개발서버에서만 나는 BE 에러 해결하기</title>
+      <link>https://lahion.github.io/posts/2025-joy-dev3/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/2025-joy-dev3/</guid>
+      
+      <description>&lt;p&gt;관련 이슈 프론트엔드 글을 쓰면서 백엔드는 어떻게 개발서버를 개발모드로 열 수 있는지 궁금해졌습니다. 그리고 백엔드에서 print를 찍었을 때 어떤 파일에서 이 기록을 확인할 수 있는지 궁금해졌습니다. 프론트엔드 작업을 하고 있지만 BE 코드도 개발모드에서 수정할 일이 있을 것 같아 기록으로 기억해두려 글을 쓰게 되었습니다. &lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;문제상황&#34;&gt;문제상황&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;개발서버를 개발모드로 열어 BE코드에서 print 찍어보기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;본론&#34;&gt;본론&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;개발서버를-개발모드로-열기&#34;&gt;개발서버를 개발모드로 열기&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh root@ // 1. 57서버 접속
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /opt/&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;-dev/backend // 2. 개발서버 경로 접속
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;파일경로&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;$ // 3. 수정하고 싶은 파일경로를 넣고 수정을 위해 vim 으로 수정하는 명령어 입력
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ps -ef &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;-dev // 5. gunicorn 프로세스 찾기
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;kill&lt;/span&gt; -1 &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;루트프로세스PID&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; // 6. 재시작 시그널&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;루트프로세스는 혼자 부모 프로세스 ID가 다른것&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h3 id=&#34;print-찍히는-것-확인해보기&#34;&gt;print 찍히는 것 확인해보기&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트&lt;/span&gt;&lt;span class=&#34;p&#34;&gt; 내 최상위 디렉토리&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/settings.py // 1. settings 파일 맨 하단에 &lt;span class=&#34;nv&#34;&gt;Debug&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;True 로 수정&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;kill&lt;/span&gt; 다시 필요 &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; 원상복구 필요&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /var/log/ // 2. &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;-dev 내 log로 이동
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tail -f &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;logfile&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; // 3. 실행해보면 실시간으로 찍히는 것을 확인할 수 있음.&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;vim이나 cat으로 열면 닫았다가 열어서 로그를 확인해야 하는 불편함이 있음&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h4 id=&#34;-간단히-살펴보는-vim-명령어-2&#34;&gt;* 간단히 살펴보는 vim 명령어 2&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;h j k l // 좌 하 상 우
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gg // 파일 맨 위
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;G // 파일 맨 아래
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/text // 아래로 검색
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;?text // 위로 검색
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;u // undo
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ctrl + r // redo
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:q! // 강제종료
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br/&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;마치며&#34;&gt;마치며&lt;/h3&gt;
+&lt;p&gt;스테이징 배포 방법을 알고 있어서 그런지 이 경우에는 익숙한 방법이었다. 관련 작업을 할 때 유용하게 활용할 수 있을 것 같다.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>개발서버에서만 나는 FE 에러 해결하기</title>
       <link>https://lahion.github.io/posts/2025-joy-dev2/</link>
@@ -24,7 +69,7 @@
 &lt;h2 id=&#34;본론&#34;&gt;본론&lt;/h2&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;개발서버를-개발모드로-열기&#34;&gt;개발서버를 개발모드로 열기&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh root@192.168.0.57 // 1. 57서버 접속
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh root@ // 1. 57서버 접속
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /opt/&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;프로젝트이름&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;-dev/web // 2. 개발서버 경로 접속
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim Dockerfile // 3. 도커파일 수정을 위해 vim 으로 수정하는 명령어 입력
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
