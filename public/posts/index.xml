@@ -6,7 +6,23 @@
     <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>두두의 2025년 회고</title>
+      <link>https://lahion.github.io/posts/2025-dudu-memoir/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/2025-dudu-memoir/</guid>
+      
+      <description>&lt;p&gt;큼직한 일들이 분기별로 떠오르는 올해입니다. 돌아보니 새삼 다들 정말 고생 많으셨습니다..!&lt;/p&gt;
+&lt;h2 id=&#34;1분기&#34;&gt;1분기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;1분기는 정말 앞만 보고 달렸던 기억이 남습니다. 이렇게까지 시간의 소중함을 느껴본 적 없던 순간이었습니다.
+나의 하루가 48시간이었으면 좋겠다는 생각을 했던 기억이 있네요.
+당시 작업했던 코드들을 보면 급한 마음에 정말 동작만 하도록 작성한 느낌이 강하고 주석을 작성하지 않아서 수정할 때 팔로우하는 시간이 많이 거리는 편이여서 아쉬운 마음이 큽니다. 주석을 두지 않아도 이해할 수 있도록 하는 것도 필요하지만 주석을 잘 작성해둬야겠다는 생각을 많이 했습니다.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Goodbye 3년차 조이</title>
       <link>https://lahion.github.io/posts/2025-joy-memoirs/</link>
@@ -334,7 +350,7 @@
       
       <description>&lt;p&gt;벌써 회고 글을 작성할 연말이 되었다니 아직도 잘 실감이 나지 않네요.&lt;br&gt;
 그만큼 한 해가 빨리 지나갔다는 뜻이겠지요?&lt;/p&gt;
-&lt;h1 id=&#34;span-stylecolorefea3a-변화의-한-해-span&#34;&gt;&lt;span style=&#34;color:#EFEA3A&#34;&gt; 변화의 한 해 &lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;변화의-한-해&#34;&gt;&lt;span style=&#34;color:#EFEA3A&#34;&gt; 변화의 한 해 &lt;/span&gt;&lt;/h1&gt;
 &lt;p&gt;LAH는 매년 변화무쌍했지만, 올해는 특히 더 변화가 많은 한 해였습니다.&lt;/p&gt;
 &lt;h4 id=&#34;사무실-이사&#34;&gt;사무실 이사&lt;/h4&gt;
 &lt;hr&gt;
