@@ -24,6 +24,24 @@
     </item>
     
     <item>
+      <title>쿠로 2025년도 회고록</title>
+      <link>https://lahion.github.io/posts/2025-kuro/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/2025-kuro/</guid>
+      
+      <description>&lt;h2 id=&#34;25년을-마치며&#34;&gt;25년을 마치며&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;올해는 정말 순식간에 지나간 한 해였습니다. 작년부터 고대하던 서비스도 올해 오픈을 하였고 서비스 안정화가 잘되어가고 있는 것 같아 보람을 느낍니다.
+원했던 백엔드 개발을 3월부터 정식으로 시작하였는데 아직도 프로젝트에서 이해하지 못한 부분들이 있을만큼 범위와 확장의 속도가 장난이 아니었습니다.
+그렇기에 더더욱 정신이 없었고, 마음은 급해져 당황하고 유연하게 대처를 하지 못한 순간들이 있었지만 오픈전까지 지장없이 마무리 할 수 있어서 다행인 마음이었습니다.
+&lt;br&gt;
+저는 한 조직, 단체에 제일 중시하고 좋아하는 것이 연대력이 높은 것 입니다. 작년처럼 올해도 같은 느낌을 받았습니다. 모두가 하나로 뭉쳐 으샤으샤하는 파이팅스러운 모습을 많이 보고 느꼈습니다.
+올해는 더더욱 일이 많아서 모두가 바쁘고 정신없는 날들이 많았지만 질문이 나왔을 때 모두 관심을 가지고 생각해주는 기억이 인상적으로 남아있습니다.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Goodbye 3년차 조이</title>
       <link>https://lahion.github.io/posts/2025-joy-memoirs/</link>
       <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
@@ -350,7 +368,7 @@
       
       <description>&lt;p&gt;벌써 회고 글을 작성할 연말이 되었다니 아직도 잘 실감이 나지 않네요.&lt;br&gt;
 그만큼 한 해가 빨리 지나갔다는 뜻이겠지요?&lt;/p&gt;
-&lt;h1 id=&#34;변화의-한-해&#34;&gt;&lt;span style=&#34;color:#EFEA3A&#34;&gt; 변화의 한 해 &lt;/span&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;span-stylecolorefea3a-변화의-한-해-span&#34;&gt;&lt;span style=&#34;color:#EFEA3A&#34;&gt; 변화의 한 해 &lt;/span&gt;&lt;/h1&gt;
 &lt;p&gt;LAH는 매년 변화무쌍했지만, 올해는 특히 더 변화가 많은 한 해였습니다.&lt;/p&gt;
 &lt;h4 id=&#34;사무실-이사&#34;&gt;사무실 이사&lt;/h4&gt;
 &lt;hr&gt;
@@ -594,7 +612,7 @@ UI/UX 관점에서만 미숙한 부분을 손 보는 정도지, 기획에 크게
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ pip install psycopg2-binary
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://database.sarang.net/?inc=read&amp;amp;aid=10427&amp;amp;criteria=pgsql&amp;amp;subcrit=qna&amp;amp;id=0&amp;amp;limit=20&amp;amp;keyword=&amp;amp;page=1&#34;&gt;PostgreSQL 설치 관련 질문&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://database.sarang.net/?inc=read&amp;aid=10427&amp;criteria=pgsql&amp;subcrit=qna&amp;id=0&amp;limit=20&amp;keyword=&amp;page=1&#34;&gt;PostgreSQL 설치 관련 질문&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/message-id/798318227.2099534.1708221119012%40mail.yahoo.com&#34;&gt;PostgreSQL 메일링 리스트 - IPC::Run 이슈&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/download/linux/redhat/&#34;&gt;PostgreSQL Linux/RHEL 다운로드 페이지&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.redhat.com/ko/documentation/red_hat_enterprise_linux/9/html/package_manifest/codereadylinuxbuilder-repository&#34;&gt;RHEL CodeReady Linux Builder 저장소 문서&lt;/a&gt;&lt;/li&gt;
