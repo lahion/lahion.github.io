@@ -1,7 +1,7 @@
 ---
 title: 태더의 2025년 회고
 author: 태더
-date: 2024-12-28
+date: 2025-12-28
 description: 2025년 회고입니다.
 ---
 
