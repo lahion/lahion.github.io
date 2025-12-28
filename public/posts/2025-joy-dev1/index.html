@@ -68,7 +68,7 @@
     </script>
 
 
-<meta name="generator" content="Hugo 0.139.3">
+<meta name="generator" content="Hugo 0.143.1">
 
     
     <meta property="og:url" content="https://lahion.github.io/posts/2025-joy-dev1/">
@@ -324,12 +324,10 @@ stroke-linejoin="round" class="feather feather-home">
 <strong>-&gt; swiper에서는 ref를 직접 넣는 방식을 지원하지 않고 있기 때문에 onSwiper 사용</strong></p>
 <blockquote>
 <p>Q. ref를 swiper에 연결하는 방법은 onInit도 있는데 onSwiper를 사용하는 이유는?<br>
-A. onInit는 초기 렌더 중에도 실행되는 반면 <U>onSwiper는 Swiper 인스턴스를 React로 넘겨주는 역할이기 때문에 렌더 이후 실행되므로 안정적이기 때문</U></p>
-</blockquote>
+A. onInit는 초기 렌더 중에도 실행되는 반면 <U>onSwiper는 Swiper 인스턴스를 React로 넘겨주는 역할이기 때문에 렌더 이후 실행되므로 안정적이기 때문</U></p></blockquote>
 <blockquote>
 <p>Q. 지연하는 방법으로 setTimeout이 아닌 useEffect를 사용하는 이유는?<br>
-A. DOM의 준비상태를 보장 못하는 setTimeout보다는 <U>useEffect를 사용하는 것이 적절함</U><br></p>
-</blockquote>
+A. DOM의 준비상태를 보장 못하는 setTimeout보다는 <U>useEffect를 사용하는 것이 적절함</U><br></p></blockquote>
 <br>
 <ol start="2">
 <li>네비게이션 버튼이 swiper 내부를 참조하고 있지 않음</li>
@@ -341,8 +339,7 @@ A. DOM의 준비상태를 보장 못하는 setTimeout보다는 <U>useEffect를 �
 -&gt; 처음에는 swiper 외부를 참조하고 있는 것을 막기 위해 swiper에 navigation과 onBeforeInit을 추가했었는데, onSwiper를 호출하면서 중복된 코드라는 것을 깨닫고 수정함.</p>
 <blockquote>
 <p>Q. useEffect 내부에서 네비게이션을 연결하고 재초기화 하는 이유?<br>
-A. onSwiper는 swiper가 초기화 된 이후 실행, 그런데 navigation 모듈은 이미 실행 끝임. 이때 prevEl/nextEl을 바꾸더라도 Swiper는 이미 navigation 버튼을 찾으려고 시도한 후이기 때문에, 다시 navigation을 자동으로 초기화하지 않음. 그렇기 때문에 네비게이션을 다시 연결하고 재초기화 하는 과정이 필요.</p>
-</blockquote>
+A. onSwiper는 swiper가 초기화 된 이후 실행, 그런데 navigation 모듈은 이미 실행 끝임. 이때 prevEl/nextEl을 바꾸더라도 Swiper는 이미 navigation 버튼을 찾으려고 시도한 후이기 때문에, 다시 navigation을 자동으로 초기화하지 않음. 그렇기 때문에 네비게이션을 다시 연결하고 재초기화 하는 과정이 필요.</p></blockquote>
 <br>
 <h2 id="실서버에서만-일어나는-문제를-로컬에서-확인하고-싶다면">실서버에서만 일어나는 문제를 로컬에서 확인하고 싶다면?</h2>
 <pre tabindex="0"><code>npm run build

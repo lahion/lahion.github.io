@@ -6,7 +6,39 @@
     <description>Recent content in Home on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>허시의 2025년 회고</title>
+      <link>https://lahion.github.io/posts/2025-hershey/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/2025-hershey/</guid>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;###2025년을 보내며,&lt;/br&gt;
+*완성하기 전. 과정 중에도. 점을 찍을 줄 알아야 한다.
+*점은 내가 찍기 마련이다.&lt;/br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;###좋았던,&lt;/br&gt;
+워크샵&lt;/br&gt;
+조두쿠의 회고 글을 읽으면서 워크샵을 가서 천만다행이라는 생각을 했습니다.&lt;/br&gt;
+안 갔으면 어쩔 뻔했나요.&lt;/br&gt;
+여러분들이 좋아해 주어서 잘했다는 생각이 들었다기보다는,&lt;/br&gt;
+길고 긴 프로젝트 사이에도 기억에 남을만한 점이 찍혔다는 점에 안도했습니다.&lt;/br&gt;
+워크샵을 완성 뒤로 미뤘다면 후회한 일에 쓸 뻔했습니다.&lt;/br&gt;&lt;/br&gt;
+HA 오픈&lt;/br&gt;
+모든 영광을 개발팀에게.&lt;/br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;###후회한,&lt;/br&gt;
+워크샵 외 모든 것들을 HA 오픈 뒤 할 일로 미뤘습니다.&lt;/br&gt;
+김 과자도 이제야 먹고 있고(지금 먹고 있죠?) 보드게임도 못했네요.&lt;/br&gt;
+이것저것 해보자 그랬는데 다 기억 저편에 묻혀버렸나 봐요.&lt;/br&gt;
+워크샵을 갔다 왔다는 것에 다시 한번 안도의 숨을 쉬어야겠어요.&lt;/br&gt;
+하마터면 올해 HA 오픈만 할 뻔했어요.&lt;/br&gt;
+물론 그것도 좋지만 2025년 = HA로 남기기엔 마냥 웃을만한 기억만은 아니잖아요.&lt;/br&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>두두의 2025년 회고</title>
       <link>https://lahion.github.io/posts/2025-dudu-memoir/</link>
@@ -612,7 +644,7 @@ UI/UX 관점에서만 미숙한 부분을 손 보는 정도지, 기획에 크게
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ pip install psycopg2-binary
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://database.sarang.net/?inc=read&amp;aid=10427&amp;criteria=pgsql&amp;subcrit=qna&amp;id=0&amp;limit=20&amp;keyword=&amp;page=1&#34;&gt;PostgreSQL 설치 관련 질문&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://database.sarang.net/?inc=read&amp;amp;aid=10427&amp;amp;criteria=pgsql&amp;amp;subcrit=qna&amp;amp;id=0&amp;amp;limit=20&amp;amp;keyword=&amp;amp;page=1&#34;&gt;PostgreSQL 설치 관련 질문&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/message-id/798318227.2099534.1708221119012%40mail.yahoo.com&#34;&gt;PostgreSQL 메일링 리스트 - IPC::Run 이슈&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.postgresql.org/download/linux/redhat/&#34;&gt;PostgreSQL Linux/RHEL 다운로드 페이지&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.redhat.com/ko/documentation/red_hat_enterprise_linux/9/html/package_manifest/codereadylinuxbuilder-repository&#34;&gt;RHEL CodeReady Linux Builder 저장소 문서&lt;/a&gt;&lt;/li&gt;
@@ -793,7 +825,7 @@ UI/UX 관점에서만 미숙한 부분을 손 보는 정도지, 기획에 크게
 &lt;li&gt;이벤트 후기&lt;/li&gt;
 &lt;li&gt;서비스 소개&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;다음 원칙을 지켜보겠습니다. &lt;img alt=&#34;LOL&#34; src=&#34;https://lahion.github.io/emoji/Lahion_emoji_4.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;다음 원칙을 지켜보겠습니다. &lt;img src=&#34;https://lahion.github.io/emoji/Lahion_emoji_4.png&#34; alt=&#34;LOL&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;성공한 것만 쓰지 않기&lt;/li&gt;
 &lt;li&gt;부연 설명 많이 하기&lt;/li&gt;
