@@ -8,7 +8,7 @@
     <language>ko-kr</language>
     <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>로컬에서 모든 api에서 CORS 에러가 나고 있을 때</title>
+      <title>로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django)</title>
       <link>https://lahion.github.io/posts/2026-joy-dev1/</link>
       <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
       
@@ -20,14 +20,7 @@
 &lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;문제상황&#34;&gt;문제상황&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;로컬에 접근했는데 모든 api에서 cors에러를 뱉고 있다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;본론&#34;&gt;본론&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;cors란&#34;&gt;CORS란?&lt;/h3&gt;
-&lt;p&gt;CORS (Cross-Origin Resource Sharing)
-다른 출처(origin)의 서버에 요청을 보낼 수 있게 허용/제한하는 브라우저 보안 정책&lt;/p&gt;</description>
+&lt;p&gt;개발스택: Next.js 16 + React 19 + TypeScript 5(FE), Python 3.12 + Django 5.2(BE)&lt;/p&gt;</description>
       
     </item>
     

@@ -3,11 +3,11 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">로컬에서 모든 api에서 CORS 에러가 나고 있을 때 | LAH (기술)블로그</title>
-<meta property="og:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때 | LAH (기술)블로그" />
-<meta name="twitter:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때 | LAH (기술)블로그" />
-<meta itemprop="name" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때 | LAH (기술)블로그" />
-<meta name="application-name" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때 | LAH (기술)블로그" />
+<title itemprop="name">로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django) | LAH (기술)블로그</title>
+<meta property="og:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django) | LAH (기술)블로그" />
+<meta name="twitter:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django) | LAH (기술)블로그" />
+<meta itemprop="name" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django) | LAH (기술)블로그" />
+<meta name="application-name" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django) | LAH (기술)블로그" />
 <meta property="og:site_name" content="LAH (기술)블로그" />
 
 <meta name="description" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때">
@@ -46,14 +46,14 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "로컬에서 모든 api에서 CORS 에러가 나고 있을 때",
+        "headline": "로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js + Django)",
         "author": {
             "@type": "Person",
             "name": "조이"
         },
         "datePublished": "2026-04-10",
         "description": "로컬에서 모든 api에서 CORS 에러가 나고 있을 때",
-        "wordCount":  239 ,
+        "wordCount":  383 ,
         "mainEntityOfPage": "True",
         "dateModified": "2026-04-10",
         "image": {
@@ -73,7 +73,7 @@
     
     <meta property="og:url" content="https://lahion.github.io/posts/2026-joy-dev1/">
   <meta property="og:site_name" content="LAH (기술)블로그">
-  <meta property="og:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때">
+  <meta property="og:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django)">
   <meta property="og:description" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때">
   <meta property="og:locale" content="ko_kr">
   <meta property="og:type" content="article">
@@ -85,7 +85,7 @@
     
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때">
+  <meta name="twitter:title" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django)">
   <meta name="twitter:description" content="로컬에서 모든 api에서 CORS 에러가 나고 있을 때">
 
 
@@ -181,7 +181,7 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">로컬에서 모든 api에서 CORS 에러가 나고 있을 때</h1>
+                <h1 class="header-title">로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js &#43; Django)</h1>
                 
                 <div class="post-meta">
                     
@@ -202,31 +202,44 @@ stroke-linejoin="round" class="feather feather-home">
 <h2 id="개요">개요</h2>
 <hr>
 <h3 id="문제상황">문제상황</h3>
+<p>개발스택: Next.js 16 + React 19 + TypeScript 5(FE), Python 3.12 + Django 5.2(BE)</p>
 <ul>
 <li>로컬에 접근했는데 모든 api에서 cors에러를 뱉고 있다.</li>
+<li>아래는 문제가 발생했던 로컬 실행 방법(실행방법에는 문제 없음)</li>
 </ul>
-<h2 id="본론">본론</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">## 프론트엔드</span>
+</span></span><span class="line"><span class="cl">pnpm run dev
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">## 백엔드</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEV_INJECT_USER_ID</span><span class="o">=</span>pk python manage.py runserver
+</span></span></code></pre></div><h2 id="본론">본론</h2>
 <hr>
 <h3 id="cors란">CORS란?</h3>
 <p>CORS (Cross-Origin Resource Sharing)
-다른 출처(origin)의 서버에 요청을 보낼 수 있게 허용/제한하는 브라우저 보안 정책</p>
-<p><b>-&gt; 그래서 CORS에러란? 다른 도메인 요청을 했을 때 브라우저가 응답을 차단하는 것.</b></p>
+CORS는 브라우저가 다른 출처(origin)에 대한 요청을 제어하기 위해 사용하는 HTTP 헤더 기반 보안 메커니즘이다.<br>
+<b>-&gt; 그래서 CORS에러란? 다른 도메인 요청을 했을 때 브라우저가 응답을 차단하는 것.</b>
+<br></p>
 <ol>
 <li>프론트 → 서버로 요청 보냄 (다른 도메인)</li>
 <li>서버 → 응답은 정상적으로 보냄</li>
 <li>브라우저가 응답을 보고 판단</li>
 <li>허용 안 되어 있으면 브라우저가 차단</li>
 </ol>
-<h3 id="cors가-났을-때-확인해야-할-부분">CORS가 났을 때 확인해야 할 부분</h3>
+<p><b>즉, 브라우저는 요청 시 Origin 헤더를 포함해 전송하고, 백엔드는 이를 기반으로 CORS 허용 여부를 판단하여 응답 헤더를 설정한다. <br>
+이후 브라우저가 응답의 CORS 헤더를 검사해 정책에 맞지 않으면 해당 응답을 차단한다. <br>
+따라서 CORS는 브라우저 환경에서만 발생하며, 대부분의 백엔드 라이브러리에서는 cors를 제어하기 위한 설정 기능을 제공하고 있다.</b></p>
+<h3 id="나의-cors-에러-해결-히스토리">나의 CORS 에러 해결 히스토리</h3>
+<p>나의 경우에는 브라우저가 API 요청 시 보내는 기준 값은 프론트 페이지의 Origin (http://localhost:3000)을 백엔드가 허용 목록에서 찾지 못해서 CORS 에러 발생하게 되었다.</p>
 <ol>
 <li>네트워크 탭에서 blocked by CORS policy, No &lsquo;Access-Control-Allow-Origin&rsquo; 같은 문구 <br>
 → CORS가 맞는지 확인</li>
 <li>실제 Origin이 뭔지 확인 <br>
 -&gt; 현재 로컬을 접속한 주소(ex. https://localhost:3000)</li>
-<li>백엔드 settings.py에 CORS_ALLOWED_ORIGINS에 해당 주소가 있는지 확인
+<li>백엔드 settings.py에 CORS_ALLOWED_ORIGINS에 해당 주소가 있는지 확인 <br>
+-&gt; 없으면 해당 origin을 백엔드에서 허용한 origin 아니기 때문에 cors 에러 발생 <br>
 -&gt; 로컬과 같은 작업환경이면 추가를 해도 되지만, 무조건적으로 추가하는 것은 아님.</li>
 </ol>
-<p>나의 경우에는 API 호스트를 살펴봤었다. origin이면 브라우저 주소를 봤었어야 하는데 그냥 에러가 뜨니 api host 살펴본 것 같다. cors에러의 원인과 해결방법은 다양하기 때문에 꼭 이 글처럼 하지 않아도 된다. 정확한 문제 상황과 원인을 파악한 후 그에 맞는 해결방법으로 처리하면 된다.</p>
+<p><b>django 자체에는 CORS 기능은 따로 없다. 그렇지만 현재 프로젝트에서 이미 django-cors-headers 패키지를 사용중이었기 때문에 미들웨어로 요청/응답에 CORS 헤더를 제공할 수 있었다. (settings.py에서 CORS_ALLOWED_ORIGINS에 등록하거나 개발모드일때는 모든 허용 등을 적용할 수 있다.)</b></p>
+<p><span style="color:grey">처음에는 API 호스트를 살펴봤었다. origin이면 브라우저 주소를 봤었어야 하는데 그냥 에러가 뜨니 api host 살펴본 것 같다. cors에러의 원인과 해결방법은 다양하기 때문에 꼭 이 글처럼 하지 않아도 된다. 정확한 문제 상황과 원인을 파악한 후 그에 맞는 해결방법으로 처리하면 된다.</span></p>
 <h3 id="마치며">마치며</h3>
 <ol>
 <li>넘겨 짚어서 문제를 해결하는 내 습관을 고쳐야된다ㅜ.ㅜ</li>

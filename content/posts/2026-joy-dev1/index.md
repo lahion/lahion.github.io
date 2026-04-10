@@ -1,5 +1,5 @@
 ---
-title: "로컬에서 모든 api에서 CORS 에러가 나고 있을 때"
+title: "로컬에서 모든 api에서 CORS 에러가 나고 있을 때(Next.js + Django)"
 author: 조이
 date: 2026-04-10
 description: "로컬에서 모든 api에서 CORS 에러가 나고 있을 때"
@@ -17,7 +17,20 @@ description: "로컬에서 모든 api에서 CORS 에러가 나고 있을 때"
 
 ### 문제상황
 
+개발스택: Next.js 16 + React 19 + TypeScript 5(FE), Python 3.12 + Django 5.2(BE)
+
 - 로컬에 접근했는데 모든 api에서 cors에러를 뱉고 있다.
+- 아래는 문제가 발생했던 로컬 실행 방법(실행방법에는 문제 없음)
+
+```bash
+## 프론트엔드
+pnpm run dev
+```
+
+```bash
+## 백엔드
+DEV_INJECT_USER_ID=pk python manage.py runserver
+```
 
 ## 본론
 
@@ -26,25 +39,34 @@ description: "로컬에서 모든 api에서 CORS 에러가 나고 있을 때"
 ### CORS란?
 
 CORS (Cross-Origin Resource Sharing)
-다른 출처(origin)의 서버에 요청을 보낼 수 있게 허용/제한하는 브라우저 보안 정책
-
+CORS는 브라우저가 다른 출처(origin)에 대한 요청을 제어하기 위해 사용하는 HTTP 헤더 기반 보안 메커니즘이다.<br>
 <b>-> 그래서 CORS에러란? 다른 도메인 요청을 했을 때 브라우저가 응답을 차단하는 것.</b>
+<br>
 
 1. 프론트 → 서버로 요청 보냄 (다른 도메인)
 2. 서버 → 응답은 정상적으로 보냄
 3. 브라우저가 응답을 보고 판단
 4. 허용 안 되어 있으면 브라우저가 차단
 
-### CORS가 났을 때 확인해야 할 부분
+<b>즉, 브라우저는 요청 시 Origin 헤더를 포함해 전송하고, 백엔드는 이를 기반으로 CORS 허용 여부를 판단하여 응답 헤더를 설정한다. <br>
+이후 브라우저가 응답의 CORS 헤더를 검사해 정책에 맞지 않으면 해당 응답을 차단한다. <br>
+따라서 CORS는 브라우저 환경에서만 발생하며, 대부분의 백엔드 라이브러리에서는 cors를 제어하기 위한 설정 기능을 제공하고 있다.</b>
+
+### 나의 CORS 에러 해결 히스토리
+
+나의 경우에는 브라우저가 API 요청 시 보내는 기준 값은 프론트 페이지의 Origin (http://localhost:3000)을 백엔드가 허용 목록에서 찾지 못해서 CORS 에러 발생하게 되었다.
 
 1. 네트워크 탭에서 blocked by CORS policy, No 'Access-Control-Allow-Origin' 같은 문구 <br>
    → CORS가 맞는지 확인
 2. 실제 Origin이 뭔지 확인 <br>
    -> 현재 로컬을 접속한 주소(ex. https://localhost:3000)
-3. 백엔드 settings.py에 CORS_ALLOWED_ORIGINS에 해당 주소가 있는지 확인
+3. 백엔드 settings.py에 CORS_ALLOWED_ORIGINS에 해당 주소가 있는지 확인 <br>
+   -> 없으면 해당 origin을 백엔드에서 허용한 origin 아니기 때문에 cors 에러 발생 <br>
    -> 로컬과 같은 작업환경이면 추가를 해도 되지만, 무조건적으로 추가하는 것은 아님.
 
-나의 경우에는 API 호스트를 살펴봤었다. origin이면 브라우저 주소를 봤었어야 하는데 그냥 에러가 뜨니 api host 살펴본 것 같다. cors에러의 원인과 해결방법은 다양하기 때문에 꼭 이 글처럼 하지 않아도 된다. 정확한 문제 상황과 원인을 파악한 후 그에 맞는 해결방법으로 처리하면 된다.
+<b>django 자체에는 CORS 기능은 따로 없다. 그렇지만 현재 프로젝트에서 이미 django-cors-headers 패키지를 사용중이었기 때문에 미들웨어로 요청/응답에 CORS 헤더를 제공할 수 있었다. (settings.py에서 CORS_ALLOWED_ORIGINS에 등록하거나 개발모드일때는 모든 허용 등을 적용할 수 있다.)</b>
+
+<span style="color:grey">처음에는 API 호스트를 살펴봤었다. origin이면 브라우저 주소를 봤었어야 하는데 그냥 에러가 뜨니 api host 살펴본 것 같다. cors에러의 원인과 해결방법은 다양하기 때문에 꼭 이 글처럼 하지 않아도 된다. 정확한 문제 상황과 원인을 파악한 후 그에 맞는 해결방법으로 처리하면 된다.</span>
 
 ### 마치며
 
