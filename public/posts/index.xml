@@ -6,7 +6,31 @@
     <description>Recent content in Posts on LAH (기술)블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://lahion.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>로컬에서 모든 api에서 CORS 에러가 나고 있을 때</title>
+      <link>https://lahion.github.io/posts/2026-joy-dev1/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://lahion.github.io/posts/2026-joy-dev1/</guid>
+      
+      <description>&lt;p&gt;필름업 개발서버 등이 오픈되면서 환경이 조금 바뀌게 되었다. 평소 접근하던 방식으로 로컬에 접근했는데 모든 api에서 cors에러를 뱉고 있었다. 환경이 바뀐 것과 관련이 있다고 직감은 했지만 정확히 어떤 부분을 살펴봐야 할지 헷갈렸다. 이러한 비슷한 이슈를 해결했던 경험을 토대로 급하게 여러군데를 살펴보았지만 정답을 찾지 못하고 개발팀 미팅 시간이 다가왔다. 힌트라도 얻기 위해 현재 상황을 공유했는데..!&lt;/p&gt;
+&lt;p&gt;..&lt;/p&gt;
+&lt;p&gt;아주 기본적인 부분이었고 태더 도움 없이도 해결 가능한 부분이었다. 이런 질문들을 점차 줄여야 할텐데,,&lt;/p&gt;
+&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;문제상황&#34;&gt;문제상황&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;로컬에 접근했는데 모든 api에서 cors에러를 뱉고 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;본론&#34;&gt;본론&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;cors란&#34;&gt;CORS란?&lt;/h3&gt;
+&lt;p&gt;CORS (Cross-Origin Resource Sharing)
+다른 출처(origin)의 서버에 요청을 보낼 수 있게 허용/제한하는 브라우저 보안 정책&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>바톤을 넘기며</title>
       <link>https://lahion.github.io/posts/2025-shongshong/</link>
